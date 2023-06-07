@@ -1,0 +1,2 @@
+class DiarySentiment < ApplicationRecord
+end
