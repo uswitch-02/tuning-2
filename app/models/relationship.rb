@@ -1,5 +1,4 @@
 class Relationship < ApplicationRecord
-  belongs_to :customer
-  belongs_to :diary
-  validates_uniqueness_of :diary_id, scope: :customer_id
+  belongs_to :follower, class_name: "Customer"
+  belongs_to :followed, class_name: "Customer"
 end

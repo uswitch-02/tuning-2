@@ -14,4 +14,19 @@ class Diary < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
+  
+  # 投稿検索機能（ワード検索）
+  def self.looks(search, word)
+    if seartch == "parfect_match"
+      @diary = Diary.where("title LIKE?","#{word}")
+    elsif search == "forward_match"
+      @diary = Diary.where("title LIKE?","#{word}%")
+    elsif search == "backward_match"
+      @diary = Diery.where("title LIKE?","%#{word}")
+    elsif search == "partial_match"
+      @diary = Diary.where("title LIKE?","%#{word}%")
+    else
+      @diary = Diary.all
+    end
+  end
 end

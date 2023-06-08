@@ -42,6 +42,18 @@ class Customer < ApplicationRecord
     followings.include?(customer)
   end
   
+  # ユーザ検索機能
+  def self.search_for(content, method)
+    if method == 'perfect'
+      Customer.where(name: content)
+    elsif method == 'forward'
+      Cutomer.where('name LIKE ?', content + '%')
+    elsif method == 'backward'
+      Customer.where('name LIKE ?', '%' + content)
+    else
+      Customer.where('name LIKE ?', '%' + content + '%')
+    end
+  end
 
 
 end
