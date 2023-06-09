@@ -26,10 +26,10 @@ class Customer < ApplicationRecord
 
   has_one_attached :profile_image
 
-  def get_profile_image
+  def get_profile_image(width, height)
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
+    profile_image.variant(resize_to_limit: [width, height]).processed
   end
-
 
   def follow(customer)
     relationships.create(followed_id: customer.id)
