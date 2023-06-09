@@ -11,6 +11,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       t.string :first_name_kana,    null: false
       t.string :last_name_kana,     null: false
       t.string :pen_name,           null: false
+      t.text :introduction,         null: false
       t.boolean :is_deleted,        null: false, default: false
       t.boolean :is_published,      null: false, default: true
       t.boolean :is_locked,         null: false, default: false

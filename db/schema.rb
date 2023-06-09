@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2023_06_08_225700) do
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
     t.string "pen_name", null: false
+    t.text "introduction", null: false
     t.boolean "is_deleted", default: false, null: false
     t.boolean "is_published", default: true, null: false
     t.boolean "is_locked", default: false, null: false
