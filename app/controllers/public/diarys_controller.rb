@@ -1,6 +1,6 @@
 class Public::DiarysController < ApplicationController
-  before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_customer!
+  before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
   def index
     @diarys = Diary.all
@@ -8,6 +8,7 @@ class Public::DiarysController < ApplicationController
 
   def show
     @diary = Diary.find(params[:id])
+    @diary_new = Diary.new
     @diary_comment = Comment.new
   end
 

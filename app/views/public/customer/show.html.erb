@@ -1,0 +1,26 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'customer/info', customer: @diary.user %>
+      <h2 class="mt-3">New book</h2>
+      <%= render 'form', book: @diary_new %>
+    </div>
+    
+    <div class='col-md-8 offset-md-1'>
+  		<h2>Book detail</h2>
+  		<table class='table'>
+  		  <tr>
+          <td><%= link_to(@diary.customer) do %>
+            <%= image_tag @diary.customer.get_profile_image, size:"100x100" %><br>
+            <%= @diary.customer.name %>
+            <% end %>
+          </td>
+          
+      <!--<div class="book-comments-index">-->
+        <!--<#%= render "book_comments/index", book: @book %>-->
+      <!--</div>-->
+        <!--<#%= render "book_comments/form", book: @book, book_comment: @book_comment %>-->
+
+  </div>
+</div>

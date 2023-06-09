@@ -1,0 +1,25 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% diary.each do |diary| %>
+      <tr>
+        <td><%= link_to(diary.user) do %>
+          <%= image_tag diary.customer.get_profile_image, size:'50x50' %>
+          <% end %>
+        </td>
+        <td><%= link_to diary.title,book %></td>
+        <td><%= diary.body %></td>
+        <!--<td>コメント数: <#%= @diary.diary_comments.count %></td>-->
+        <!--<td id= "favorite_buttons_<#%= diary.id %>">-->
+          <!--<#%= render "favorites/btn", diary: diary %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

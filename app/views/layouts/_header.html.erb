@@ -1,0 +1,41 @@
+<header>
+  <nav class="navbar navbar-expand-lg", style="background-color: #001A43;">
+    <div class="container">
+      <div class="row w-100">
+        <div class="col-9">
+          <div class="row w-100 justify-content-end">
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+              <!--<ul class="navbar-nav ml-5">-->
+                <ul class="navbar-nav ml-auto">
+                <% if customer_signed_in? %>
+                  <!--Customer ログイン後header-->
+                  <span class="navbar-text text-right mr-3">ようこそ、<%= current_customer.full_name %>さん</span>
+                  <li><%= link_to "Mypage", customers_path,                class: 'nav-link text-right' %></li>
+                  <li><%= link_to "Diarys",   diarys_path,                    class: 'nav-link text-right' %></li>
+                  <li><%= link_to "サインイン",     new_customer_session,    class: 'nav-link text-right' %></li>
+                  <li><%= link_to "ログアウト", destroy_customer_session_path, class: 'nav-link text-right', method: :delete %></li>
+                <% elsif admin_signed_in? %>
+                  <!--Admin ログイン後header-->
+                  <li><%= link_to "会員一覧",     admin_customers_path,        class: 'nav-link text-right' %></li>
+                  <li><%= link_to "ログアウト",   destroy_admin_session_path,  class: 'nav-link text-right', method: :delete %></li>
+                <% else %>
+                  <!--共通ログイン前 header-->
+                  <li><%= link_to "About",    about_path,                      class: 'nav-link text-right' %></li>
+                  <li><%= link_to "投稿一覧", diarys_path,                      class: 'nav-link text-right' %></li>
+                  <li><%= link_to "新規登録", new_customer_registration_path,  class: 'nav-link text-right' %></li>
+                  <li><%= link_to "ログイン", new_customer_session_path,       class: 'nav-link text-right' %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          <!--<div class="row mt-2 w-100 justify-content-end">-->
+            <!--<#%= form_with url: items_path, method: :get, local: true, class: "form-inline search_container" do |f| %>-->-->
+              <!--<#%= f.text_field :search, placeholder: "Search", class: "form-control"%>-->-->
+            <!--<#% end %>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
