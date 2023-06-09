@@ -37,6 +37,16 @@
             <td><%= f.text_field :pen_name, placeholder: "ユーザーネーム", class: "form_control" %></td>
           </tr>
           <tr>
+            <td>パスワード(6文字以上)</td>
+            <td></td>
+            <td><%= f.password_field :password, autocomplete: "new-password", class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td>パスワード(確認用)</td>
+            <td></td>
+            <td><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %></td>
+          </tr>
+          <tr>
             <!--ボタンうまくいってない-->
             <td colspan="2"></td>
             <td><%= f.submit "新規登録", class: "btn btn-block btn-usually font-weight-bold my-3" %></td>

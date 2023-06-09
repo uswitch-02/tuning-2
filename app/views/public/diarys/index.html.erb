@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% diary.each do |diary| %>
+    <% @diarys.each do |diary| %>
       <tr>
         <td><%= link_to(diary.user) do %>
           <%= image_tag diary.customer.get_profile_image, size:'50x50' %>

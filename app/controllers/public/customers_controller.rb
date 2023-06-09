@@ -1,5 +1,8 @@
 class Public::CustomersController < ApplicationController
       def show
+        
+        @customer = Customer.find(params[:id])
+        @diarys = @customer.diary
       end
 
       def edit

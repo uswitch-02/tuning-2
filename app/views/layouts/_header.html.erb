@@ -11,9 +11,9 @@
                 <% if customer_signed_in? %>
                   <!--Customer ログイン後header-->
                   <span class="navbar-text text-right mr-3">ようこそ、<%= current_customer.full_name %>さん</span>
-                  <li><%= link_to "Mypage", customers_path,                class: 'nav-link text-right' %></li>
+                  <li><%= link_to "Mypage", customer_path,                class: 'nav-link text-right' %></li>
                   <li><%= link_to "Diarys",   diarys_path,                    class: 'nav-link text-right' %></li>
-                  <li><%= link_to "サインイン",     new_customer_session,    class: 'nav-link text-right' %></li>
+                  <li><%= link_to "サインイン",     new_customer_session_path,    class: 'nav-link text-right' %></li>
                   <li><%= link_to "ログアウト", destroy_customer_session_path, class: 'nav-link text-right', method: :delete %></li>
                 <% elsif admin_signed_in? %>
                   <!--Admin ログイン後header-->
