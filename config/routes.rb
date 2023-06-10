@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
     namespace :admin do
       get '/' => 'homes#top'
-      resources :customers,   only: %i(index show edit update create) 
+      resources :customers,   only: %i(index show edit update create)
+      resources :diarys,      only: %i(index)
     end
 
     scope module: :public do

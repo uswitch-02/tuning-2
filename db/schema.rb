@@ -83,10 +83,10 @@ ActiveRecord::Schema.define(version: 2023_06_08_225700) do
 
   create_table "diaries", force: :cascade do |t|
     t.integer "customer_id", null: false
-    t.string "title", null: false
-    t.text "body", null: false
-    t.integer "creativity", null: false
-    t.float "emotion_point", null: false
+    t.string "title"
+    t.text "body"
+    t.integer "creativity"
+    t.float "emotion_point"
     t.boolean "is_draft", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

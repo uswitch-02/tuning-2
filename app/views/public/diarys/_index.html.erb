@@ -14,11 +14,11 @@
           <%= image_tag diary.customer.get_profile_image, size:'50x50' %>
           <% end %>
         </td>
-        <td><%= link_to diary.title,book %></td>
+        <td><%= link_to diary.title, diary %></td>
         <td><%= diary.body %></td>
         <td>コメント数: <%= @diary.comments.count %></td>
-        <td id= "favorite_buttons_<%= diary.id %>">
-          <%= render "favorites/btn", diary: diary %></td>
+        <!--<td id= "favorite_buttons_<#%= diary.id %>">-->
+          <!--<#%= render "favorites/btn", diary: diary %></td>-->
       </tr>
     <% end %>
   </tbody>
