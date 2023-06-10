@@ -1,9 +1,10 @@
 class Public::DiarysController < ApplicationController
-  before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_customer!
+  before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
   def index
     @diarys = Diary.all
+    @diary = Diary.new
   end
 
   def show
@@ -13,6 +14,13 @@ class Public::DiarysController < ApplicationController
 
   def create
     @diary = Diary.new(diary_params)
+    @diary.customer_id = current_customer.id
+    if @diary.save
+      redirect_to diary_path(@diary), notice: "You have created book successfully."
+    else
+      @diary = Diary.all
+      render 'index'
+    end
   end
 
   def edit

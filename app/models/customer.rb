@@ -16,20 +16,34 @@ class Customer < ApplicationRecord
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :first_name_kana, presence: true
-  validates :last_name_kana, presence: true
-  validates :pen_name, presence: true
-  validates :email, presence: true
-  validates :encrypted_password, presence: true,length: { minimum: 6 }
+    # バリデーション
+    with_options presence: true do
+    validates :first_name
+    validates :last_name
+    validates :pen_name
+    validates :email, presence: true
+    validates :encrypted_password, presence: true,length: { minimum: 6 }
+  
+    with_options format: { with: /\A[ァ-ヶー－]+\z/, message: 'は全角カタカナで入力して下さい。'} do
+    validates :first_name_kana, presence: true
+    validates :last_name_kana, presence: true
+    end
+  end
+
+  def full_name
+    last_name + first_name
+  end
+
+  def full_name_kana
+    last_name_kana + " " + first_name_kana
+  end
 
   has_one_attached :profile_image
 
   def get_profile_image
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
+    # profile_image.variant(resize_to_limit: [width, height]).processed
   end
-
 
   def follow(customer)
     relationships.create(followed_id: customer.id)
