@@ -4,16 +4,23 @@ class Public::DiarysController < ApplicationController
 
   def index
     @diarys = Diary.all
+    @diary = Diary.new
   end
 
   def show
     @diary = Diary.find(params[:id])
-    @diary_new = Diary.new
     @diary_comment = Comment.new
   end
 
   def create
     @diary = Diary.new(diary_params)
+    @diary.customer_id = current_customer.id
+    if @diary.save
+      redirect_to diary_path(@diary), notice: "You have created book successfully."
+    else
+      @diary = Diary.all
+      render 'index'
+    end
   end
 
   def edit
