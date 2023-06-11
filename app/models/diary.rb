@@ -11,8 +11,8 @@ class Diary < ApplicationRecord
   validates :title,presence:true
   validates :body,presence:true,length:{maximum:200}
   
-  def favorited_by?(user)
-    favorites.exists?(user_id: user.id)
+  def favorited_by?(customer)
+    favorites.exists?(customer_id: customer.id)
   end
   
   # 投稿検索機能（ワード検索）
