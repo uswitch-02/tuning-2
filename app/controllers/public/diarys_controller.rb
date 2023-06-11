@@ -26,7 +26,7 @@ class Public::DiarysController < ApplicationController
   def edit
     @diary = Diary.find(params[:id])
     if @diary.save
-      redirect_to book_path(@diary), notice: "投稿に成功しました."
+      redirect_to diary_path(@diary), notice: "投稿に成功しました."
     else
       render 'show'
     end

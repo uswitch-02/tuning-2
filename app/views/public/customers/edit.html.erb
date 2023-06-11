@@ -5,8 +5,8 @@
     <%= form_with model:@customer, local:true do |f| %>
       <%= render 'layouts/errors', obj: @customer %>
       <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: "form-control name" %>
+        <%= f.label :Username %>
+        <%= f.text_field :penname, class: "form-control name" %>
       </div>
      <div class="form-group">
         <%= f.label :image %>
