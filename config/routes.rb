@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
     namespace :admin do
       get '/' => 'homes#top'
-      resources :customers,   only: %i(index show edit update create) 
+      resources :customers,   only: %i(index show edit update create)
+      resources :diarys,      only: %i(index)
     end
 
     scope module: :public do
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
       end
 
 
-      resources :customers,  only: %i(show edit update) do
+      resources :customers,  only: %i(show edit update index) do
         resource :relationships, only: %i(create destroy)
         get 'followings' => 'relationships#followings', as: 'followings'
         get 'followers' => 'relationships#followers', as: 'followers'
