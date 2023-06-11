@@ -7,11 +7,11 @@
     </tr>
   </thead>
   <tbody>
-    <% customer.each do |customer| %>
+    <% customers.each do |customer| %>
       <tr>
         <td><%= image_tag customer.get_profile_image, size: '50x50' %></td>
-        <td><%= customer.name %></td>
-        <td><%= render "/public/relationships/btn", customer: customer %></td>
+        <td><%= customer.pen_name %></td>
+        <td><%= render "public/relationships/btn", customer: customer %></td>
         <td><%= link_to 'Show', customer, class: "customer_#{customer.id}" %></td>
       </tr>
     <% end %>

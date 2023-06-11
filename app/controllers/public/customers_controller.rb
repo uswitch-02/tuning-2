@@ -5,6 +5,10 @@ class Public::CustomersController < ApplicationController
         @diarys = @customer.diary
         @diary = Diary.new
       end
+      
+      def index
+        @customers = Customer.all
+      end
 
       def edit
          @customer = current_customer

@@ -13,11 +13,12 @@
                   <span class="navbar-text text-right mr-3">ようこそ、<%= current_customer.full_name %>さん</span>
                   <li><%= link_to "マイページ", customer_path(current_customer),    class: 'nav-link text-right' %></li>
                   <li><%= link_to "Diarys",     diarys_path,                        class: 'nav-link text-right' %></li>
+                   <li><%= link_to "users",     customers_path,                        class: 'nav-link text-right' %></li>
                   <li><%= button_to "ログアウト", destroy_customer_session_path,     class: 'nav-link text-right', method: :delete %></li>
                 <% elsif admin_signed_in? %>
                   <!--Admin ログイン後header-->
                   <li><%= link_to "会員一覧",     admin_customers_path,             class: 'nav-link text-right' %></li>
-                  <li><%= link_to "会員一覧",     admin_diarys_path,                class: 'nav-link text-right' %></li>
+                  <li><%= link_to "会員投稿一覧",     admin_diarys_path,                class: 'nav-link text-right' %></li>
                   <li><%= link_to "ログアウト",   destroy_admin_session_path,      class: ' nav-link text-right', method: :delete %></li>
                 <% else %>
                   <!--共通ログイン前 header-->
@@ -26,13 +27,14 @@
                   <li><%= link_to "新規登録", new_customer_registration_path,  class: 'nav-link text-right' %></li>
                   <li><%= link_to "ログイン", new_customer_session_path,       class: 'nav-link text-right' %></li>
                 <% end %>
+              <div class="search_form serch_inner">
+                  <%= form_with url: customer_search_path, local: true, method: :get do |f| %>
+                  <%= f.text_field :search %>
+                  <%= f.submit "検索", placeholder: "Search" %>
+                  <% end %>
+              </div>
               </ul>
             </div>
-          </div>
-          <!--<div class="row mt-2 w-100 justify-content-end">-->
-            <!--<#%= form_with url: items_path, method: :get, local: true, class: "form-inline search_container" do |f| %>-->-->
-              <!--<#%= f.text_field :search, placeholder: "Search", class: "form-control"%>-->-->
-            <!--<#% end %>-->
           </div>
         </div>
       </div>

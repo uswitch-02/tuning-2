@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       end
 
 
-      resources :customers,  only: %i(show edit update) do
+      resources :customers,  only: %i(show edit update index) do
         resource :relationships, only: %i(create destroy)
         get 'followings' => 'relationships#followings', as: 'followings'
         get 'followers' => 'relationships#followers', as: 'followers'
