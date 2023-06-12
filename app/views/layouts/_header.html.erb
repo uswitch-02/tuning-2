@@ -26,6 +26,7 @@
                   <li><%= link_to "投稿一覧", diarys_path,                      class: 'nav-link text-right' %></li>
                   <li><%= link_to "新規登録", new_customer_registration_path,  class: 'nav-link text-right' %></li>
                   <li><%= link_to "ログイン", new_customer_session_path,       class: 'nav-link text-right' %></li>
+                  <li><%= link_to 'ゲストログイン（閲覧用）', guests_guest_sign_in_path, method: :post %></li>
                 <% end %>
               <div class="search_form serch_inner">
                 <%= render 'public/searches/form' %>
