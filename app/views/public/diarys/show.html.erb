@@ -1,11 +1,14 @@
 <div class='container'>
   <div class='row'>
+ 
     <div class='col-md-3'>
       <h2>User info</h2>
       <%= render 'public/customers/info', customer: @diary.customer %>
       <h2 class="mt-3">diary</h2>
       <%= render 'form', diary: Diary.new %>
     </div>
+    
+    
     <div class='col-md-8 offset-md-1'>
   		<h2>Book detail</h2>
   		<table class='table'>
@@ -15,14 +18,18 @@
             <%= @diary.customer.pen_name %>
             <% end %>
           </td>
+          
           <td><%= link_to @diary.title, @diary %></td>
           <td><%= @diary.body %></td>
+          
           <td class=<%= "favorite-" + @diary.id.to_s %> >
             <%= render "public/favorites/btn", diary: @diary %>
           </td>
+          
           <td class="diary-comments-counter">
             <%= render "public/comments/counter", diary: @diary %>
           </td>
+          
           <% if @diary.customer == current_customer %>
             <td><%= link_to 'Edit', edit_diary_path(@diary), class: "btn btn-sm btn-success edit_diary_#{@diary.id}" %></td>
             <td><%= link_to 'Destroy', @diary, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_diary_#{@diary.id}"%></td>
@@ -30,12 +37,10 @@
         </tr>
       </table>
       
-      <div class="diary-comments-index">
-        <%= render "public/comments/index", diary: @diary %>
-      </div>
-      
+        <div class="diary-comments-index">
+          <%= render "public/comments/index", diary: @diary %>
+        </div>
       <%= render "public/comments/form", diary: @diary, diary_comment: @diary_comment %>
-      
     </div>
   </div>
 </div>

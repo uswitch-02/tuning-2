@@ -1,8 +1,8 @@
 
 <% if @model == 'customer' %>
 	<h3>Cutomers search for "<%= @content %>"</h3>
-  <%= render 'customers/index', users: @records %>
+  <%= render 'public/customers/index', customers: @records %>
 <% elsif @model == 'book' %>
 	<h3>Diarys search for "<%= @content %>"</h3>
-  <%= render 'diarys/index', books: @records %>
+  <%= render 'public/diarys/index', diarys: @records %>
 <% end %>
