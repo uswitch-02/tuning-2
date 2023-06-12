@@ -9,7 +9,7 @@ class Public::DiarysController < ApplicationController
 
   def show
     @diary = Diary.find(params[:id])
-    @diary_comment = Comment.new
+    @comment = Comment.new
   end
 
   def create

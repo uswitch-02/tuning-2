@@ -8,8 +8,9 @@ class Customer < ApplicationRecord
   enum is_published: { disclose: true, non_disclosure: false }
   enum is_locked: { unlook: false, look: true }
 
-  has_many :diary, dependent: :destroy
-  has_many :report, dependent: :destroy
+  has_many :diarys, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :reports, dependent: :destroy
   has_many :favorites, dependent: :destroy
 # 自分がフォローされる（被フォロー）側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -65,13 +66,13 @@ class Customer < ApplicationRecord
   # ユーザ検索機能
   def self.search_for(content, method)
     if method == 'perfect'
-      Customer.where(name: content)
+      Customer.where(pen_name: content)
     elsif method == 'forward'
-      Cutomer.where('name LIKE ?', content + '%')
+      Cutomer.where('pen_name LIKE ?', content + '%')
     elsif method == 'backward'
-      Customer.where('name LIKE ?', '%' + content)
+      Customer.where('pen_name LIKE ?', '%' + content)
     else
-      Customer.where('name LIKE ?', '%' + content + '%')
+      Customer.where('penname LIKE ?', '%' + content + '%')
     end
   end
 

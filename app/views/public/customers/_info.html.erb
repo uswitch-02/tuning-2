@@ -20,7 +20,7 @@
 
 <div class='row'>
   <% if current_customer != customer %>
-      <td><%= render "relationships/btn", customer: customer %></td>
+      <td><%= render "public/relationships/btn", customer: customer %></td>
   <% else %>
     <%= link_to edit_customer_path(customer), class: "btn btn-outline-secondary btn-block" do %>
     <i class="fas fa-user-cog"></i>

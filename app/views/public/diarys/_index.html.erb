@@ -19,7 +19,7 @@
         <td>コメント数: <%= @diary.comments.count %></td>
         <td id= "favorite_buttons_<%= diary.id %>">
           <%= render "public/favorites/btn", diary: diary %></td>
-          <!--<td><%#= render "diary_comments/counter",book: book %></td>-->
+          <%= render "public/comments/counter",diary: diary %></td>
       </tr>
     <% end %>
   </tbody>

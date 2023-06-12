@@ -16,7 +16,7 @@
         </td>
         <td><%= link_to diary.title, diary %></td>
         <td><%= diary.body %></td>
-        <td>コメント数: <#%= @diary.diary_comments.count %></td>
+        <td>コメント数: <%= @diary.comments.count %></td>
         <td id= "favorite_buttons_<#%= diary.id %>">
           <%= render "public/favorites/btn", diary: diary %></td>
       </tr>

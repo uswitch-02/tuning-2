@@ -4,6 +4,7 @@ class Public::CustomersController < ApplicationController
         @customer = current_customer
         @diarys = @customer.diary
         @diary = Diary.new
+        @comment = Comment.new
       end
       
       def index
