@@ -2,7 +2,7 @@ class Public::CustomersController < ApplicationController
 
       def show
         @customer = current_customer
-        @diarys = @customer.diary
+        @diarys = @customer.diarys
         @diary = Diary.new
         @comment = Comment.new
       end

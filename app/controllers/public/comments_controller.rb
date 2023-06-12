@@ -3,9 +3,8 @@ class Public::CommentsController < ApplicationController
       @diary = Diary.find(params[:diary_id])
       @comment = current_customer.comments.new(comment_params)
       @comment.diary_id = @diary.id
-      if@comment.save
-        render :create
-      else
+      @comment.save
+      if @comment.body.nil?
         render 'diarys/show'
       end
     end

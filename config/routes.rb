@@ -20,20 +20,18 @@ Rails.application.routes.draw do
         patch  'customers/withdraw'          =>  'customers#withdraw'
         get    'customers/information/edit', to: 'customers#edit',   as: 'edit_customer'
         patch  'customers/information',      to: 'customers#update', as: 'update_customer'
-        get    'customer/search'             =>  'customer#search'
-
       resources :diarys,       only: %i(index show create edit update destroy) do
         resource :favorites, only: %i(create destroy)
         resources :comments, only: %i(create destroy)
       end
-
 
       resources :customers,  only: %i(show edit update index) do
         resource :relationships, only: %i(create destroy)
         get 'followings' => 'relationships#followings', as: 'followings'
         get 'followers' => 'relationships#followers', as: 'followers'
       end
-      
+
+      get    'searchs/search'             =>  'searchs#search'
       post '/guests/guest_sign_in', to: 'guests#new_guest'
       resources :sentiments,      only: %i(create destroy)
 
