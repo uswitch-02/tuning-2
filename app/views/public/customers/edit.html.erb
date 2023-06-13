@@ -8,7 +8,7 @@
         <%= f.label :Username %>
         <%= f.text_field :pen_name, class: "form-control name" %>
       </div>
-     <div class="form-group">
+      <div class="form-group">
         <%= f.label :image %>
         <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
       </div>
@@ -16,9 +16,14 @@
         <%= f.label :introduction %>
         <%= f.text_area :introduction, class: "form-control introduction" %>
       </div>
+    <h4>アカウント設定</h4>
       <div class="form-group">
-        <%= f.submit class: 'btn btn-secondary' %>
+        <%= f.label :is_publisheds, "公開設定" %>
+        <%= f.select :is_publisheds, options_for_select(Customer.is_publisheds.values.map { |v| [I18n.t("enums.customer.is_publisheds.#{v}"), v] }), {}, class: "form-control" %>
       </div>
+    <div class="form-group">
+      <%= f.submit "⇒", class: 'btn btn-secondary' %>
     <% end %>
+    </div>
   </div>
 </div>
