@@ -42,6 +42,18 @@ class Public::CustomersController < ApplicationController
         end
       end
 
+        def favorite
+          @customer = Customer.find(params[:id])
+          @favorites= Favorite.where(customer_id: @customer.id).pluck(:diary_id)
+          @favorite_diaries = Diary.find(@favorites)
+        end
+        
+        def guest_sign_in
+          public = Public.guest
+          sign_in public
+          redirect_to public_path(public), notice: 'guestuserでログインしました。'
+        end
+
       private
 
       def customer_params

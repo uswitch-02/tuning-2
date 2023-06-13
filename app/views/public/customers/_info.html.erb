@@ -16,6 +16,9 @@
     <th>followers</th>
     <th><%= link_to customer.followers.count, customer_followers_path(customer) %></th>
   </tr>
+  <tr>
+    <th><%=link_to"お気に入り記事",favorites_customer_path(@customer) %></th>
+  </tr>
 </table>
 
 <div class='row'>
