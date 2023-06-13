@@ -36,6 +36,21 @@ class Customer < ApplicationRecord
     end
   end
 
+  def self.guest
+    guest_email = "guest_#{SecureRandom.hex}@example.com"
+    find_or_create_by!(pen_name: 'guestuser', email: guest_email, first_name: 'ユーザー', last_name: 'ゲスト', first_name_kana: 'ゲスト', last_name_kana: 'ユーザー') do |customer|
+      customer.password = SecureRandom.urlsafe_base64
+    end
+  end
+
+
+  def guest?
+    # ゲストユーザーかどうかの判定
+    # email がゲストユーザー用の特定の値であるかを判定する場合
+    email == 'guest@example.com'
+    pen_name == 'guestuser'
+  end
+
   def full_name
     last_name + first_name
   end

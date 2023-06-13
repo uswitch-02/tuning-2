@@ -1,13 +1,14 @@
 class Public::CustomersController < ApplicationController
-
+before_action :ensure_guest_user, only: [:edit]
       def show
         @customer = current_customer
         @diarys = @customer.diarys
         @diary = Diary.new
         @comment = Comment.new
       end
-      
+
       def index
+        @customer = current_customer
         @customers = Customer.all
       end
 
@@ -42,7 +43,26 @@ class Public::CustomersController < ApplicationController
         end
       end
 
+        def favorite
+          @customer = Customer.find(params[:id])
+          @favorites= Favorite.where(customer_id: @customer.id).pluck(:diary_id)
+          @favorite_diaries = Diary.find(@favorites)
+        end
+
+        def guest_sign_in
+          public = Public.guest
+          sign_in public
+          redirect_to public_path(public), notice: 'guestuserでログインしました。'
+        end
+
       private
+
+      def ensure_guest_user
+          @customer = current_customer
+        if @customer.pen_name == "guestuser"
+          redirect_to customer_path(current_customer) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
+        end
+      end
 
       def customer_params
         params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :pen_name, :introduction )
