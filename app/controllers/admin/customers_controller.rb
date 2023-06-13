@@ -3,7 +3,7 @@ class Admin::CustomersController < ApplicationController
   def index
     #会員者情報、1ページの表示件数10件
     @customers = Customer.all.page(params[:page]).per(10)
-    @customer = Customer.find(params[:id])
+    # @customer = Customer.find(params[:id])
   end
 
   def show
@@ -28,7 +28,7 @@ class Admin::CustomersController < ApplicationController
     # 管理者のみが投稿を削除できるようにする
     if admin_signed_in?
       @diary.destroy
-      redirect_to admin_customers_path, notice: '投稿を削除しました。'
+      redirect_to admin_customer_path(@diary), notice: '投稿を削除しました。'
     else
       redirect_to diary_path(@diary), alert: 'この操作は許可されていません。'
     end

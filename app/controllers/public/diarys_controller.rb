@@ -8,8 +8,14 @@ class Public::DiarysController < ApplicationController
   end
 
   def show
+    @current_customer = current_customer
     @diary = Diary.find(params[:id])
     @comment = Comment.new
+    if @diary.is_draft? && @diary.customer != current_customer
+      respond_to do |format|
+        format.html { redirect_to diarys_path, notice: 'このページにはアクセスできません' }
+      end
+    end
   end
 
   def create
@@ -53,7 +59,7 @@ class Public::DiarysController < ApplicationController
     private
 
   def diary_params
-    params.require(:diary).permit(:title, :body)
+    params.require(:diary).permit(:title, :body, :is_draft)
   end
   def ensure_correct_customer
     @diary = Diary.find(params[:id])

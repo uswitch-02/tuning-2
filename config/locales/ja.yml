@@ -1,6 +1,13 @@
- ja:
-    enums:
-      customer:
-        is_deleted:
-          exist: "有効"
-          withdraw: "退会"
+ja:
+  enums:
+    customer:
+      is_deleted:
+        exist: "有効"
+        withdraw: "退会"
+      is_published:
+        disclose: "公開"
+        non_disclosure: "非公開"
+    diary:
+      is_draft:
+        posted: "公開"
+        draft: "非公開"

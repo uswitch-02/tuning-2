@@ -8,6 +8,14 @@
     <%= f.label :opinion %>
     <%= f.text_area :body, class: 'form-control diary_body' %>
   </div>
+  <div class= "form-group">
+    <%= f.radio_button :is_drafts, Diary.is_drafts.key(false) %>
+    <%= f.label :is_drafts_posted, Diary.is_drafts_i18n[:posted] %>
+  </div>
+  <div class= "form-group">
+    <%= f.radio_button :is_drafts, Diary.is_drafts.key(true) %>
+    <%= f.label :is_drafts_draft, Diary.is_drafts_i18n[:draft] %>
+  </div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>
   </div>
