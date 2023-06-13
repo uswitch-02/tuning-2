@@ -8,6 +8,7 @@ before_action :ensure_guest_user, only: [:edit]
       end
       
       def index
+        @customer = current_customer
         @customers = Customer.all
       end
 
