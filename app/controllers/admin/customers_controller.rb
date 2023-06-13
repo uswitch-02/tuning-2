@@ -3,7 +3,7 @@ class Admin::CustomersController < ApplicationController
   def index
     #会員者情報、1ページの表示件数10件
     @customers = Customer.all.page(params[:page]).per(10)
-    @customer = Customer.find(params[:id])
+    # @customer = Customer.find(params[:id])
   end
 
   def show
