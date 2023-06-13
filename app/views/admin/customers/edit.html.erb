@@ -1,5 +1,5 @@
 <div class="container-md">
-    <h2><%= @customer.customer_name %>さんの会員情報編集</h2>
+    <h2><%= @customer.full_name %>さんの会員情報編集</h2>
   <%= form_with model: @customer, url: admin_customer_path, metod: :patch, local: true do |f| %>
   <table class="mt-5 mb-5">
     <tr>
@@ -50,10 +50,10 @@
       <td>会員ステータス</td>
       <!--会員の退会、有効を選択するラジオボタン-->
       <td>
-      　<%= f.radio_button :is_deleted, Customer.member_statuses.key(false) %>
-        <%= f.label :is_deleted_exist, Customer.member_statuses_i18n[:exist] %>
-        <%= f.radio_button :is_deleted, Customer.member_statuses.key(true) %>
-        <%= f.label :is_deleted_withdraw, Customer.member_statuses_i18n[:withdraw] %>
+      　<%= f.radio_button :is_deleted, Customer.is_deleteds.key(false) %>
+        <%= f.label :is_deleted_exist, Customer.is_deleteds_i18n[:exist] %>
+        <%= f.radio_button :is_deleted, Customer.is_deleteds.key(true) %>
+        <%= f.label :is_deleted_withdraw, Customer.is_deleteds_i18n[:withdraw] %>
       </td>
       </div>
     </tr>
