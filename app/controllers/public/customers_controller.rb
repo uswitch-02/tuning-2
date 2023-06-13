@@ -6,7 +6,7 @@ before_action :ensure_guest_user, only: [:edit]
         @diary = Diary.new
         @comment = Comment.new
       end
-      
+
       def index
         @customer = current_customer
         @customers = Customer.all
@@ -48,7 +48,7 @@ before_action :ensure_guest_user, only: [:edit]
           @favorites= Favorite.where(customer_id: @customer.id).pluck(:diary_id)
           @favorite_diaries = Diary.find(@favorites)
         end
-        
+
         def guest_sign_in
           public = Public.guest
           sign_in public
@@ -56,13 +56,13 @@ before_action :ensure_guest_user, only: [:edit]
         end
 
       private
-      
+
       def ensure_guest_user
-          @customer = Customer.find(params[:id])
-        if @customer.name == "guestuser"
+          @customer = current_customer
+        if @customer.pen_name == "guestuser"
           redirect_to customer_path(current_customer) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
         end
-      end  
+      end
 
       def customer_params
         params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :pen_name, :introduction )
