@@ -8,6 +8,7 @@ class Public::DiarysController < ApplicationController
   end
 
   def show
+    @current_customer = current_customer
     @diary = Diary.find(params[:id])
     @comment = Comment.new
   end
