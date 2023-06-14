@@ -1,6 +1,9 @@
 <table class='table table-hover table-inverse'>
   <thead>
     <tr>
+      <!--非公開の投稿の詳細にログインユーザー以外が行こうとしたときインデックスにリダイレクトする-->
+      <!--リダイレクトしたときのフラッシュメッセージが出る-->
+      <%= flash[:notice] %>
       <th></th>
       <th>Title</th>
       <th>Opinion</th>
