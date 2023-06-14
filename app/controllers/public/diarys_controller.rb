@@ -23,7 +23,7 @@ class Public::DiarysController < ApplicationController
     @diary = Diary.new(diary_params)
     @diary.customer_id = current_customer.id
     if @diary.save
-      redirect_to diary_path(@diary), notice: "You have created book successfully."
+      redirect_to diary_path(@diary), notice: "投稿できましたね。おめでとうございます！"
     else
       @diary = Diary.all
       render 'index'
