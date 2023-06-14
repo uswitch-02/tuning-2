@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum is_deleted: { exist: false, withdraw: true }
-  enum is_published: { disclose: true, non_disclosure: false }
+  # enum is_published: { disclose: true, non_disclosure: false }
   enum is_locked: { unlook: false, look: true }
 
   has_many :diarys, dependent: :destroy

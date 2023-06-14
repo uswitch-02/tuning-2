@@ -18,8 +18,8 @@
       </div>
     <h4>アカウント設定</h4>
       <div class="form-group">
-        <%= f.label :is_publisheds, "公開設定" %>
-        <%= f.select :is_publisheds, options_for_select(Customer.is_publisheds.values.map { |v| [I18n.t("enums.customer.is_publisheds.#{v}"), v] }), {}, class: "form-control" %>
+        <%= f.label :is_published, "公開設定" %>
+        <%= f.select :is_published, options_for_select([["公開",true],["非公開",false]]), {}, class: "form-control" %>
       </div>
     <div class="form-group">
       <%= f.submit "⇒", class: 'btn btn-secondary' %>

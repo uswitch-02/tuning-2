@@ -1,3 +1,4 @@
 class DiarySentiment < ApplicationRecord
-  has
+  belongs_to :diary
+  belongs_to :sentiment
 end

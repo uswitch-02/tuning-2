@@ -21,7 +21,14 @@
 
           <td><%= link_to @diary.title, @diary %></td>
           <td><%= @diary.body %></td>
-
+            <!--投稿の公開・非公開の状態が表示されてほしい-->
+            <td><%= @diary.is_draft_i18n %></td>
+            <!--投稿したときにつけたタグが表示されてほしい-->
+          <td>
+            <% @diary.sentiments.each do |sentiment| %>
+              <%= sentiment.name %>
+            <% end %>
+          </td>
           <td class=<%= "favorite-" + @diary.id.to_s %> >
             <%= render "public/favorites/btn", diary: @diary %>
           </td>

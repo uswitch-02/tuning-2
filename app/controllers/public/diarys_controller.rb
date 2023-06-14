@@ -3,7 +3,7 @@ class Public::DiarysController < ApplicationController
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
   def index
-    @diarys = Diary.all
+    @diarys = Diary.all.where(is_draft: :posted)
     @diary = Diary.new
   end
 
@@ -11,6 +11,7 @@ class Public::DiarysController < ApplicationController
     @current_customer = current_customer
     @diary = Diary.find(params[:id])
     @comment = Comment.new
+    # 投稿が非公開かつ、投稿者がログインユーザーでない場合別のページにリダイレクト
     if @diary.is_draft? && @diary.customer != current_customer
       respond_to do |format|
         format.html { redirect_to diarys_path, notice: 'このページにはアクセスできません' }
@@ -22,7 +23,7 @@ class Public::DiarysController < ApplicationController
     @diary = Diary.new(diary_params)
     @diary.customer_id = current_customer.id
     if @diary.save
-      redirect_to diary_path(@diary), notice: "You have created book successfully."
+      redirect_to diary_path(@diary), notice: "投稿できましたね。おめでとうございます！"
     else
       @diary = Diary.all
       render 'index'
@@ -56,11 +57,17 @@ class Public::DiarysController < ApplicationController
 
 
 
-    private
+private
 
   def diary_params
-    params.require(:diary).permit(:title, :body, :is_draft)
+    params.require(:diary).permit(:title, :body, :is_draft, sentiment_ids: [])
   end
+
+  def article_params
+    params.require(:article).permit(:body)
+  end
+
+# 日記の所有者だけが日記の編集や削除などの特定のアクションを実行できるようにする
   def ensure_correct_customer
     @diary = Diary.find(params[:id])
     unless @diary.customer == current_customer

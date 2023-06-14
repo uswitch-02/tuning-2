@@ -8,7 +8,10 @@
   </thead>
   <tbody>
     <% customers.each do |customer| %>
+    <!--ゲストログインしているユーザーは一覧に表示しない-->
     <% unless customer.guest? %>
+    <!--アカウントが非公開になっているユーザーは一覧に表示しない-->
+    <% next unless customer.is_published %>
       <tr>
         <td><%= image_tag customer.get_profile_image, size: '50x50' %></td>
         <td><%= customer.pen_name %></td>

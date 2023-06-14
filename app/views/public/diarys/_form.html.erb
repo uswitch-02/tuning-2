@@ -8,6 +8,18 @@
     <%= f.label :opinion %>
     <%= f.text_area :body, class: 'form-control diary_body' %>
   </div>
+  <!--投稿に着けるタグの表示-->
+  <div class='form-group'>
+        <%= f.collection_check_boxes(:sentiment_ids, Sentiment.all, :id, :name) do |sentiment| %>
+            <div class='form-check'>
+                <%= sentiment.label class: 'form-check-label' do %>
+                    <%= sentiment.check_box class: 'form-check-input' %>
+                    <%= sentiment.text %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+    <!--投稿の公開・非公開を選択するラジオボタン-->
   <div class= "form-group">
     <%= f.radio_button :is_drafts, Diary.is_drafts.key(false) %>
     <%= f.label :is_drafts_posted, Diary.is_drafts_i18n[:posted] %>
