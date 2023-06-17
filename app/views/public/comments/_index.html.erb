@@ -1,0 +1,21 @@
+<table>
+  <tbody>
+      <% diary.comments.each do |comment| %>
+      <tr>
+        
+        <td>
+          <%= link_to customer_path(comment.customer) do %>
+            <%= image_tag comment.customer.get_profile_image, size: "100x100" %><br>
+            <%= comment.customer.pen_name %>
+          <% end %>
+        </td>
+        <td><%= comment.body %></td>
+        <td>
+          <% if comment.customer == current_customer %>
+            <%= link_to "Destroy", diary_comment_path(diary, comment), method: :delete, class: "btn btn-danger pull-right", remote: true %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

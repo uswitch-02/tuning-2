@@ -1,0 +1,15 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'info', customer: @customer %>
+      <h2>diary form</h2>
+      <%= render 'public/diarys/form', diary: @diary %>
+    </div>
+
+    <div class='col-md-8 offset-md-1'>
+  		<h2>diary</h2>
+      <%= render 'public/diarys/index', diarys: @diarys %>
+    </div>
+  </div>
+</div>

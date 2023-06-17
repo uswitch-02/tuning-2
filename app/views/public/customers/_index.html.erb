@@ -1,0 +1,24 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% customers.each do |customer| %>
+    <!--ゲストログインしているユーザーは一覧に表示しない-->
+    <% unless customer.guest? %>
+    <!--アカウントが非公開になっているユーザーは一覧に表示しない-->
+    <% next unless customer.is_published %>
+      <tr>
+        <td><%= image_tag customer.get_profile_image, size: '50x50' %></td>
+        <td><%= customer.pen_name %></td>
+        <td><%= render "public/relationships/btn", customer: customer %></td>
+        <td><%= link_to 'Show', customer, class: "customer_#{customer.id}" %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>

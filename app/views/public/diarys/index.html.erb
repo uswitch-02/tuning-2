@@ -1,0 +1,29 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <!--非公開の投稿の詳細にログインユーザー以外が行こうとしたときインデックスにリダイレクトする-->
+      <!--リダイレクトしたときのフラッシュメッセージが出る-->
+      <%= flash[:notice] %>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @diarys.each do |diary| %>
+    <% next unless diary.customer.is_published %>
+      <tr>
+        <td><%= link_to(diary.customer) do %>
+          <%= image_tag diary.customer.get_profile_image, size:'50x50' %>
+          <% end %>
+        </td>
+        <td><%= link_to diary.title, diary %></td>
+        <td><%= diary.body %></td>
+        <td>コメント数: <%= @diary.comments.count %></td>
+        <td id= "favorite_buttons_<#%= diary.id %>">
+          <%= render "public/favorites/btn", diary: diary %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

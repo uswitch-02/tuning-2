@@ -1,0 +1,17 @@
+ja:
+  enums:
+    customer:
+      is_deleted:
+        exist: "有効"
+        withdraw: "退会"
+    diary:
+      is_draft:
+        posted: "公開"
+        draft: "非公開"
+  model:
+    customer:
+  attributes:
+    customer:
+      is_published:
+        true: "公開"
+        false: "非公開"

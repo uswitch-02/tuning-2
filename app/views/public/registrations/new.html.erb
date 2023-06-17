@@ -1,0 +1,67 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-10 mx-auto sign_up">
+<!--ここにエラーメッセージいれます。パーシャル-->
+
+<!--とりあえず既存のやつ-->
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "public/shared/error_messages", resource: resource %>
+
+      <h5 class="ml-5 mb-5"><span class="title-custom px-4">新規会員登録</span></h5>
+      <!--新規登録フォーム-->
+      <%= form_with model: @customer, url: customer_registration_path do |f| %>
+      <div class="form-group">
+        <table class="table table-sm table-borderless">
+          <tr>
+            <td>名前</td>
+            <td>(姓)</td>
+            <td><%= f.text_field :last_name, placeholder: "姓", class: "form_control" %></td>
+            <td>(名)</td>
+            <td><%= f.text_field :first_name, placeholder: "名", class: "form_control" %></td>
+          </tr>
+          <tr>
+            <td>フリガナ</td>
+            <td>(セイ)</td>
+            <td><%= f.text_field :last_name_kana, placeholder: "セイ", class: "form_control" %></td>
+            <td>(メイ)</td>
+            <td><%= f.text_field :first_name_kana, placeholder: "メイ", class: "form_control" %></td>
+          </tr>
+          <tr>
+            <td>メールアドレス</td>
+            <td></td>
+            <td><%= f.email_field :email,placeholder: "sample@example.com", class: "form_control" %></td>
+          </tr>
+          <tr>
+            <td>ユーザーネーム</td>
+            <td></td>
+            <td><%= f.text_field :pen_name, placeholder: "ユーザーネーム", class: "form_control" %></td>
+          </tr>
+          <tr>
+            <td>パスワード(6文字以上)</td>
+            <td></td>
+            <td><%= f.password_field :password, autocomplete: "new-password", class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td>パスワード(確認用)</td>
+            <td></td>
+            <td><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %></td>
+          </tr>
+          <tr>
+            <!--ボタンうまくいってない-->
+            <td colspan="2"></td>
+            <td><%= f.submit "新規登録", class: "btn btn-block btn-usually font-weight-bold my-3" %></td>
+          </tr>
+        </table>
+      </div>
+      <% end %>
+    <%= render "public/shared/links" %>
+<% end %>
+
+      <!--ログインリンク-->
+      <div class="ml-5">
+        <h5 class="font-weignt-hold mb-3"><span class="title-custom px-4">登録済みの方</span></h5>
+        <div class="ml-5"><%= link_to "こちら", new_customer_session_path %> からログインしてください。</div>
+      </div>
+    </div>
+  </div>
+</div>
