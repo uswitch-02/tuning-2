@@ -21,7 +21,9 @@ class Public::DiarysController < ApplicationController
 
   def create
     @diary = Diary.new(diary_params)
+    @diary.score = Language.get_data(diary_params[:body])
     @diary.customer_id = current_customer.id
+
     if @diary.save
       redirect_to diary_path(@diary), notice: "投稿できましたね。おめでとうございます！"
     else
