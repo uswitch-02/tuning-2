@@ -23,7 +23,7 @@
           <td><%= @diary.body %></td>
             <!--投稿の公開・非公開の状態が表示される-->
             <td><%= @diary.is_draft_i18n %></td>
-            
+
             <!--投稿したときにつけたタグが表示される-->
           <td>
             <% @diary.sentiments.each do |sentiment| %>
@@ -53,6 +53,14 @@
           <!-- ログインしていてかつ表示する投稿がログインユーザーの投稿の場合には投稿フォームを表示させない -->
           <%= render "public/comments/form", diary: @diary, diary_comment: @diary_comment %>
       <% end %>
+          <!--API感情スコアをグラフとして表示する-->
+        <div class="chart_area">
+          <canvas id="myChart"></canvas>
+        </div>
+          <script>
+            var diaryData = <%= raw @diary_data.to_json %>;
+          </script>
+          <%= javascript_pack_tag 'chart' %>
     </div>
   </div>
 </div>

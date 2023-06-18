@@ -10,6 +10,8 @@ class Public::DiarysController < ApplicationController
   def show
     @current_customer = current_customer
     @diary = Diary.find(params[:id])
+    #感情スコアを表示するための値を取得
+    @diary_data = [@diary.score]
     @comment = Comment.new
     # 投稿が非公開かつ、投稿者がログインユーザーでない場合別のページにリダイレクト
     if @diary.is_draft? && @diary.customer != current_customer
@@ -25,6 +27,8 @@ class Public::DiarysController < ApplicationController
     @diary.customer_id = current_customer.id
 
     if @diary.save
+      #グラフに関するデータを取得しています。
+      @diary_data = Diary.pluck(:score)
       redirect_to diary_path(@diary), notice: "投稿できましたね。おめでとうございます！"
     else
       @diary = Diary.all
