@@ -1,61 +1,92 @@
 // app/javascript/packs/chart.js
 /*global diaryData */
 import Chart from 'chart.js/auto';
+// [0.5]
+console.log(diaryData)
+// var jsonData = JSON.parse('<%= raw @jsonData.html_safe %>');
+// var jsonData = [
+//   { posi: 0.5, date: '2023-06-18' },
+//   { nega: -1, date: '2023-06-18' },
+//   { posi: 0.6, date: '2023-06-19' },
+//   { nega: -0.3, date: '2023-06-19' }
+// ];
 
-document.addEventListener('turbolinks:load',function() {
+document.addEventListener('DOMContentLoaded', function() {
+  var positiveData = [];
+  var negativeData = [];
+  var dates = [];
+
+
+  // データの集計
+  for (var i = 0; i < diaryData.length; i++) {
+    var data = diaryData[i];
+    var date = data.date;
+    var positive = data.posi || 0;
+    var negative = data.nega || 0;
+
+    dates.push(date);
+    positiveData.push(+positive);
+    negativeData.push(+negative);
+  }
+
   var chartContainer = document.getElementById('myChart');
   var ctx = chartContainer.getContext('2d');
 
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['データセット1'],
-      datasets: [{
-        label: 'データセット1',
-        data: diaryData,
-        borderColor: 'red',
-        backgroundColor: 'transparent'
-      }]
+      labels: dates,
+      datasets: [
+        {
+          label: 'ポジティブ',
+          data: positiveData,
+          borderColor: '#B0C4DE',
+          backgroundColor: '#F0F8FF'
+        },
+        {
+          label: 'ネガティブ',
+          data: negativeData,
+          borderColor: '#FFC0CB',
+          backgroundColor: '#FFF0F5'
+        }
+      ]
     },
     options: {
-      responsive: true,  // レスポンシブ対応（自動的にサイズ調整）
-      maintainAspectRatio: false,  // アスペクト比の維持しない
-
+      responsive: true,
+      maintainAspectRatio: false,
       scales: {
         x: {
-          display: true,  // X軸の表示
+          display: true,
           title: {
             display: true,
-            text: '日付'  // X軸のタイトル
+            text: '日付'
           }
         },
         y: {
-          display: true,  // Y軸の表示
+          display: true,
           title: {
             display: true,
-            text: '感情スコア'  // Y軸のタイトル
+            text: '感情スコア'
           },
-          suggestedMin: 0,  // Y軸の最小値
-          suggestedMax: 10,  // Y軸の最大値
+          suggestedMin: -1,
+          suggestedMax: 1,
           ticks: {
-            stepSize: 5  // Y軸の目盛りの間隔
+            stepSize: 0.1
           }
         }
       },
-
       animation: {
-        duration: 2000,  // アニメーションの時間（ミリ秒）
-        easing: 'easeInOutQuart'  // アニメーションのイージング
+        duration: 2000,
+        easing: 'easeInOutQuart'
       },
-
       plugins: {
         legend: {
-          display: true,  // 凡例の表示
-          position: 'top'  // 凡例の位置（top, bottom, left, right）
+          display: true,
+          position: 'top'
         },
         title: {
           display: true,
-          text: '感情スコアの推移'  // グラフのタイトル
+          text: '感情スコアの推移'
         }
       }
     }

@@ -5,6 +5,19 @@ before_action :ensure_guest_user, only: [:edit]
         @diarys = @customer.diarys
         @diary = Diary.new
         @comment = Comment.new
+        @diarys = Diary.where(customer_id: params[:id])
+        # @diary_dataを空の配列で初期化する
+        @diary_data = []
+        @diarys.each do |diary|
+        if diary.score.present? && diary.created_at.present?
+         if diary.score >= 0
+           @diary_data.push({"posi": diary.score, date: diary.created_at.to_date.strftime('%Y-%m-%d') })
+         else
+           @diary_data.push({"nega": diary.score, date: diary.created_at.to_date.strftime('%Y-%m-%d') })
+         end
+        end
+       end
+       @jsonData = @diary_data.to_json
       end
 
       def index
@@ -67,5 +80,4 @@ before_action :ensure_guest_user, only: [:edit]
       def customer_params
         params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :pen_name, :introduction, :is_published )
       end
-
 end

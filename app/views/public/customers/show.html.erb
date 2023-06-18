@@ -9,7 +9,18 @@
 
     <div class='col-md-8 offset-md-1'>
   		<h2>diary</h2>
+  		<!--会員が投稿した投稿のみ表示-->
       <%= render 'public/diarys/index', diarys: @diarys %>
+      <!--API感情スコアをグラフとして表示する-->
+      <div class="chart_area">
+        <canvas id="myChart"></canvas>
+      </div>
+          <script>
+          
+            var diaryData = <%= raw @diary_data.to_json %>;
+          </script>
+          <%= javascript_pack_tag 'chart' %>
+      </div>
     </div>
   </div>
 </div>
