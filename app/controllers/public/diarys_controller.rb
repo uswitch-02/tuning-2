@@ -9,24 +9,7 @@ class Public::DiarysController < ApplicationController
 
   def show
     @current_customer = current_customer
-
     @diary = Diary.find(params[:id])
-    #@diarys = Diary.where(customer_id: params[:id])
-    #@diary_data = []
-    #@diarys.each do |diary|
-    # if diary.score >= 0
-    #   @diary_data.push("posi": diary.score, date: diary.created_at)
-    # else
-    #   @diary_data.push("nega": diary.score, date: diary.created_at)
-    # end
-
-
-
-
-     # @diary_data = {}
-    #感情スコアを表示するための値を取得
-    # @diary_data = [@diary.score]
-
     @comment = Comment.new
     # 投稿が非公開かつ、投稿者がログインユーザーでない場合別のページにリダイレクト
     if @diary.is_draft? && @diary.customer != current_customer

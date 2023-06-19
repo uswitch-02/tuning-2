@@ -30,7 +30,7 @@
               <%= sentiment.name %>
             <% end %>
           </td>
-          <span class="sentiment-score">本文の感情分析スコア<%= @diary.score %></span>
+
           <td class=<%= "favorite-" + @diary.id.to_s %> >
             <%= render "public/favorites/btn", diary: @diary %>
           </td>
@@ -44,6 +44,7 @@
             <td><%= link_to 'Destroy', @diary, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_diary_#{@diary.id}"%></td>
           <% end %>
         </tr>
+        <span class="sentiment-score">本文の感情分析スコア<%= @diary.score %></span>
       </table>
 
         <div class="diary-comments-index">
@@ -52,15 +53,6 @@
         <% unless @current_customer && @current_customer == @diary.customer %>
           <!-- ログインしていてかつ表示する投稿がログインユーザーの投稿の場合には投稿フォームを表示させない -->
           <%= render "public/comments/form", diary: @diary, diary_comment: @diary_comment %>
-      <% end %>
-          <!--API感情スコアをグラフとして表示する-->
-    <!--    <div class="chart_area">-->
-    <!--      <canvas id="myChart"></canvas>-->
-    <!--    </div>-->
-    <!--      <script>-->
-    <!--        var diaryData = <#%= raw @diary_data.to_json %>;-->
-    <!--      </script>-->
-    <!--      <#%= javascript_pack_tag 'chart' %>-->
-    <!--</div>-->
+        <% end %>
   </div>
 </div>

@@ -11,9 +11,10 @@ import "channels"
 import "jquery";
 import "popper.js";
 import "bootstrap";
+import "./vivus";
 import "../stylesheets/application";
 // import '@fontawesome/fontawesome-free/js/all'
-
+require('jquery')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

@@ -6,6 +6,7 @@ before_action :ensure_guest_user, only: [:edit]
         @diary = Diary.new
         @comment = Comment.new
         @diarys = Diary.where(customer_id: params[:id])
+
         # @diary_dataを空の配列で初期化する
         @diary_data = []
         @diarys.each do |diary|
