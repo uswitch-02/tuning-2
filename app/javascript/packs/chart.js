@@ -40,14 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
         {
           label: 'ポジティブ',
           data: positiveData,
-          borderColor: '#B0C4DE',
-          backgroundColor: '#F0F8FF'
+          borderColor: '#ffb6c1',
+          backgroundColor: '#db7093',
+          fill: true,
         },
         {
           label: 'ネガティブ',
           data: negativeData,
-          borderColor: '#FFC0CB',
-          backgroundColor: '#FFF0F5'
+          borderColor: '#87ceeb',
+          backgroundColor: '#add8e6',
+          fill: true,
         }
       ]
     },

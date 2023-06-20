@@ -40,8 +40,12 @@ $(window).scroll(function () {
 // ここまで画面をスクロールをしたら動かしたい場合の記述
 
 // 画面が読み込まれたらすぐに動かしたい場合の記述
-$(window).on('load', function () {
-  VivusInit(); //SVG初期設定
-  VivusAnime();/* SVGアニメーション用の関数を呼ぶ*/
+$(document).on('turbolinks:load', function() {
+  $(document).ready(function(){
+    if ($('#logo').length) {
+      VivusInit(); //SVG初期設定
+      VivusAnime();/* SVGアニメーション用の関数を呼ぶ*/
+    }
+  });
 });
 // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
