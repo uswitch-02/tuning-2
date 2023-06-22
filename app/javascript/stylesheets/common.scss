@@ -37,8 +37,12 @@ a{
 }
 
 .svganimeblock{
-  margin:150px auto;
-  text-align: center;
+  margin: 150px auto;
+  // text-align: center;
+  position: relative;
+  top: 100px;
+  left: 200px;
+  
 }
 
 p{margin:20px 0 0 0;}
@@ -61,12 +65,12 @@ p{margin:20px 0 0 0;}
     fill-opacity: 0;/*最初は透過0で見えない状態*/
     transition: fill-opacity .5s;/*カラーがつく際のアニメーション0.5秒で変化*/
     fill: none;/*塗りがない状態*/
-    stroke: #333;/*線の色*/
+    stroke: #000B00;/*線の色*/
   }
 
 /*アニメーション後に.doneというクラス名が付与された時のパスの指定*/
 .svganimeblock svg.done path{
-    fill: #666;/*塗りの色*/
+    fill: #000B00;/*塗りの色*/
     fill-opacity: 1;/*透過1で見える状態*/
     stroke: none;/*線の色なし*/
   }
