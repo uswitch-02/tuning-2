@@ -3,8 +3,6 @@ input#content {
   border-style: inset;
 }
 
-
-
 select {
   background-color: #fff;
   border-style: inset;
@@ -24,6 +22,13 @@ input[value="ログアウト"]{
   background-color: transparent;
   border: none;
 }
+
+.top_about_link_image{
+  width: 200px;
+  height: 200px;
+  margin-top: 400px;
+  margin-left: 250px;
+}
 .chart_area{
   height: 500px !important;
   width: 100% !important;
@@ -39,10 +44,10 @@ a{
 .svganimeblock{
   margin: 150px auto;
   // text-align: center;
-  position: relative;
-  top: 100px;
-  left: 200px;
-  
+  position: absolute;
+  top: 150px;
+  left: 550px;
+
 }
 
 p{margin:20px 0 0 0;}
