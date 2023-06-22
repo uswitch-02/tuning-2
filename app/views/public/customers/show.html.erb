@@ -1,33 +1,35 @@
-<div class='container'>
+<div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-3'>
-      <h2>User info</h2>
-      <%= render 'info', customer: @customer %>
-      <h2>diary form</h2>
-      <%= render 'public/diarys/form', diary: @diary %>
-    </div>
 
-    <div class='col-md-8 offset-md-1'>
-  		<h2>diary</h2>
-  		<!--会員が投稿した投稿のみ表示-->
-      <%= render 'public/diarys/index', diarys: @diarys %>
-
-      <!--投稿したときにつけたタグが表示される-->
-      <td>
-        <% @diary.sentiments.each do |sentiment| %>
-          <%= sentiment.name %>
-        <% end %>
-      </td>
- 
-      <!--API感情スコアをグラフとして表示する-->
-      <div class="chart_area">
-        <canvas id="myChart"></canvas>
+      <div class='col-md-3'>
+        <h2>User info</h2>
+        <%= render 'info', customer: @customer %>
+        <h2 class="mt-3">diary form</h2>
+        <%= render 'public/diarys/form', diary: @diary %>
       </div>
+
+      <div class='col-md-8 offset-md-1'>
+        	<h2>diary</h2>
+        	<!--ログインユーザーが投稿した投稿のみ表示-->
+          <%= render 'public/diarys/index', diarys: @diarys %>
+
+
+          <!--投稿したときにつけたタグが表示される-->
+          <td>
+            <% @diary.sentiments.each do |sentiment| %>
+              <%= sentiment.name %>
+            <% end %>
+          </td>
+
+
+          <!--API感情スコアをグラフとして表示する-->
+          <div class="chart_area">
+            <canvas id="myChart"></canvas>
+          </div>
           <script>
             var diaryData = <%= raw @diary_data.to_json %>;
           </script>
-          <%= javascript_pack_tag 'chart' %>
+            <%= javascript_pack_tag 'chart' %>
       </div>
-    </div>
   </div>
 </div>
