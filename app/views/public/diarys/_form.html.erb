@@ -9,16 +9,20 @@
     <%= f.text_area :body, class: 'form-control diary_body' %>
   </div>
   <!--投稿に着けるタグの表示-->
-  <div class='form-group'>
-        <%= f.collection_check_boxes(:sentiment_ids, Sentiment.all, :id, :name) do |sentiment| %>
-            <div class='form-check'>
-                <%= sentiment.label class: 'form-check-label' do %>
-                    <%= sentiment.check_box class: 'form-check-input' %>
-                    <%= sentiment.text %>
-                <% end %>
-            </div>
+    <div class='form-group'>
+      <div class= "row">
+          <%= f.collection_check_boxes(:sentiment_ids, Sentiment.all, :id, :name) do |sentiment| %>
+              <div class='form-check'>
+                <table class="table">
+                  <%= sentiment.label class: 'form-check-label' do %>
+                      <%= sentiment.check_box class: 'form-check-input' %>
+                      <%= sentiment.text %>
+                  <% end %>
+                </div>
+              </div>
         <% end %>
-    </div>
+      </div>
+  </div>
     <!--投稿の公開・非公開を選択するラジオボタン-->
   <div class= "form-group">
     <%= f.radio_button :is_drafts, Diary.is_drafts.key(false) %>

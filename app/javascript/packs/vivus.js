@@ -34,7 +34,7 @@ function VivusAnime(){
 
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function () {
-  console.log('test');
+  // console.log('test');
   VivusAnime();/* SVGアニメーション用の関数を呼ぶ*/
 });
 // ここまで画面をスクロールをしたら動かしたい場合の記述

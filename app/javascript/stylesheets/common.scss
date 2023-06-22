@@ -1,5 +1,18 @@
 input#content {
   background: #fff !important;
+  border-style: inset;
+}
+
+
+
+select {
+  background-color: #fff;
+  border-style: inset;
+}
+
+input[value="検索"]{
+  background-color: #fff;
+  border-style: inset;
 }
 
 input[value="ログアウト"]:hover{
