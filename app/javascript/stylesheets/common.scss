@@ -1,3 +1,4 @@
+// ヘッダー関連のscss
 input#content {
   background: #fff !important;
   border-style: inset;
@@ -22,13 +23,14 @@ input[value="ログアウト"]{
   background-color: transparent;
   border: none;
 }
-
+// アバウトページに移動するリンク
 .top_about_link_image{
   width: 200px;
   height: 200px;
   margin-top: 400px;
   margin-left: 250px;
 }
+// 感情スコアをグラフに関する
 .chart_area{
   height: 500px !important;
   width: 100% !important;
@@ -79,12 +81,3 @@ p{margin:20px 0 0 0;}
     fill-opacity: 1;/*透過1で見える状態*/
     stroke: none;/*線の色なし*/
   }
-
-body {
-  background-image: url("../images/tuning-top.png");
-  background-size: contain;
-  width:100%;
-  height:1500px;
-  background-position: 0px 60px;
-  background-repeat: no-repeat;
-}
