@@ -1,14 +1,15 @@
 class Public::CustomersController < ApplicationController
 before_action :ensure_guest_user, only: [:edit]
+
+
       def show
-        @customer = current_customer
+        @customer = Customer.find(params[:id])
         @diarys = @customer.diarys
         @diary = Diary.new
         @comment = Comment.new
-        @diarys = Diary.where(customer_id: params[:id])
 
-        # @diary_dataを空の配列で初期化する
-        @diary_data = []
+        @diarys = Diary.where(customer_id: params[:id])
+        @diary_data = []# @diary_dataを空の配列で初期化する
         @diarys.each do |diary|
         if diary.score.present? && diary.created_at.present?
          if diary.score >= 0
@@ -21,14 +22,17 @@ before_action :ensure_guest_user, only: [:edit]
        @jsonData = @diary_data.to_json
       end
 
+
       def index
         @customer = current_customer
-        @customers = Customer.all
+        @customers = Customer.all.page(params[:page]).per(10)
       end
+
 
       def edit
          @customer = current_customer
       end
+
 
       def update
         @customer = current_customer

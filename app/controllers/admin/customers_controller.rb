@@ -8,7 +8,13 @@ class Admin::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    # @customer = Customer.find_by(id: params[:id])
+    # if @customer.nil?
+    #   flash[:error] = "Customer with ID #{params[:id]} not found."
+    #   redirect_to admin_customers_path
+    # else
     @diarys = @customer.diarys
+    # end
   end
 
   def edit
@@ -28,7 +34,7 @@ class Admin::CustomersController < ApplicationController
     # 管理者のみが投稿を削除できるようにする
     if admin_signed_in?
       @diary.destroy
-      redirect_to admin_customer_path(@diary), notice: '投稿を削除しました。'
+      render action: :show, notice: '投稿を削除しました。'
     else
       redirect_to diary_path(@diary), alert: 'この操作は許可されていません。'
     end
@@ -36,7 +42,7 @@ class Admin::CustomersController < ApplicationController
 
 
 
-private
+  private
 
 
   def customer_params
