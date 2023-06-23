@@ -87,7 +87,7 @@ class Customer < ApplicationRecord
     elsif method == 'backward'
       Customer.where('pen_name LIKE ?', '%' + content)
     else
-      Customer.where('penname LIKE ?', '%' + content + '%')
+      Customer.where('pen_name LIKE ?', '%' + content + '%')
     end
   end
 

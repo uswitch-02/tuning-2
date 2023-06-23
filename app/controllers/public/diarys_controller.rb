@@ -13,9 +13,13 @@ class Public::DiarysController < ApplicationController
     @comment = Comment.new
     # 投稿が非公開かつ、投稿者がログインユーザーでない場合別のページにリダイレクト
     if @diary.is_draft? && @diary.customer != current_customer
-      respond_to do |format|
-        format.html { redirect_to diarys_path, notice: 'このページにはアクセスできません' }
-      end
+        respond_to do |format|
+          format.html { redirect_to diarys_path, notice: 'このページにはアクセスできません' }
+        end
+      else
+        respond_to do |format|
+          format.html { render :show, notice: '投稿を閲覧できます' }
+        end
     end
   end
 
@@ -35,13 +39,13 @@ class Public::DiarysController < ApplicationController
   end
 
   def edit
-    @diary = Diary.find(params[:id])
+    # @diary = Diary.find(params[:id])
   end
 
   def update
-    @diary = Diary.find(params[:id])
-    if @book.update(diary_params)
-      redirect_to diarys_edit_path(@diary), notice: "投稿を編集しました"
+    # @diary = Diary.find(params[:id])
+    if @diary.update(diary_params)
+      redirect_to diarys_path(@diary), notice: "投稿を編集しました"
     else
       render "edit"
     end

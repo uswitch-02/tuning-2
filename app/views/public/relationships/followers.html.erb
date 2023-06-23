@@ -1,0 +1,6 @@
+<h2>Fllower Users</h2>
+<% if @customer.exists? %>
+  <%= render 'public/customers/index', customers: @customer %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>
