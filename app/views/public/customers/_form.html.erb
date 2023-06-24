@@ -1,5 +1,5 @@
-<%= form_with model: new_diary, url: diarys_path, method: :post, local: true do |f| %>
-  <%= hidden_field_tag(:diary_id, diary_id) %>
+<%= form_with model: diary, url: customer_create_diary_path(@customer.id), method: :post, local: true do |f| %>
+
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control diary_title' %>

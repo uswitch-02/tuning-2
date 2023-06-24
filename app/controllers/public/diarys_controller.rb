@@ -19,23 +19,21 @@ class Public::DiarysController < ApplicationController
     @diary = Diary.new(diary_params)
     @diary.score = Language.get_data(diary_params[:body])
     @diary.customer_id = current_customer.id
-
     if @diary.save
       #グラフに関するデータを取得しています。
       @diary_data = Diary.pluck(:score)
-      redirect_to diary_path(@diary), notice: "投稿できました"
+      flash[:notice] = "投稿できました"
+      redirect_to action: :index
     else
-      @diary = Diary.all
-      render 'index'
+     flash[:notice] = "投稿に失敗しました"
+     redirect_to action: :show, id: params[:diary_id]
     end
   end
 
   def edit
-    # @diary = Diary.find(params[:id])
   end
 
   def update
-    # @diary = Diary.find(params[:id])
     if @diary.update(diary_params)
       redirect_to diarys_path(@diary), notice: "投稿を編集しました"
     else
