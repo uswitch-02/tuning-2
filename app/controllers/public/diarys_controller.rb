@@ -5,22 +5,33 @@ class Public::DiarysController < ApplicationController
   def index
     @diarys = Diary.all.where(is_draft: :posted)
     @diary = Diary.new
+        # 投稿が非公開かつ、投稿者がログインユーザーでない場合別のページにリダイレクト
+    # if @diary.is_draft? && @diary.customer != current_customer
+    #     # respond_to do |format|
+    #     #format.html { redirect_to diarys_path, notice: 'このページにはアクセスできません' }
+    #       redirect_to diarys_path(@diarys), notice: 'このページにはアクセスできません'
+    #     # end
+    # else
+
+    #       render :show, notice: '投稿を閲覧できます'
+    # # end
+    # end
+    # respond_to do |format|
+    #   format.html do
+        if @diary.is_draft? && @diary.customer != current_customer
+          # redirect_to (request.referer || root_path)
+          # redirect_to fallback_location: root_path, notice: 'このページにはアクセスできません'
+        else
+          # render :show, notice: '投稿を閲覧できます'
+        end
+    #   end
+    # end
   end
 
   def show
     @current_customer = current_customer
     @diary = Diary.find(params[:id])
     @comment = Comment.new
-    # 投稿が非公開かつ、投稿者がログインユーザーでない場合別のページにリダイレクト
-    if @diary.is_draft? && @diary.customer != current_customer
-        respond_to do |format|
-          format.html { redirect_to diarys_path, notice: 'このページにはアクセスできません' }
-        end
-      else
-        respond_to do |format|
-          format.html { render :show, notice: '投稿を閲覧できます' }
-        end
-    end
   end
 
   def create
