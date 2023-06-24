@@ -20,7 +20,7 @@
           <td><%= diary.body %></td>
           <td>
             <% if admin_signed_in? %> <!-- 管理者がサインインしている場合のみ表示 -->
-              <%= link_to '削除', admin_customer_path(diary), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+              <%= link_to '削除', admin_diary_path(diary), method: :delete, data: { confirm: '本当に削除しますか？' } %>
             <% end %>
           </td>
         </tr>

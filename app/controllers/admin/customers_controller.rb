@@ -28,17 +28,17 @@ class Admin::CustomersController < ApplicationController
     flash[:notice] = "編集に成功しました"
   end
 
-  def destroy
-    @diary = Diary.find(params[:id])
+  # def destroy
+  #   @diary = Diary.find(params[:id])
 
-    # 管理者のみが投稿を削除できるようにする
-    if admin_signed_in?
-      @diary.destroy
-      render action: :show, notice: '投稿を削除しました。'
-    else
-      redirect_to diary_path(@diary), alert: 'この操作は許可されていません。'
-    end
-  end
+  #   # 管理者のみが投稿を削除できるようにする
+  #   if admin_signed_in?
+  #     @diary.destroy
+  #     render action: :show, notice: '投稿を削除しました。'
+  #   else
+  #     redirect_to diary_path(@diary), alert: 'この操作は許可されていません。'
+  #   end
+  # end
 
 
 
