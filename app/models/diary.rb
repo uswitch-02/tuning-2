@@ -26,30 +26,30 @@ class Diary < ApplicationRecord
   # end
 
   # 投稿検索機能（ワード検索）
-  # def self.search_for(search, word)
-  #   if method == "parfect"
-  #     @diary = Diary.where("title LIKE?","#{word}")
-  #   elsif search == "forward"
-  #     @diary = Diary.where("title LIKE?","#{word}%")
-  #   elsif search == "backward"
-  #     @diary = Diery.where("title LIKE?","%#{word}")
-  #   elsif search == "partial"
-  #     @diary = Diary.where("title LIKE?","%#{word}%")
-  #   else
-  #     @diary = Diary.all
-  #   end
-  # end
-  def self.search_for(content, method)
-    if method == 'perfect'
-      Customer.where(title: content)
-    elsif method == 'forward'
-      Cutomer.where('title LIKE ?', content + '%')
-    elsif method == 'backward'
-      Customer.where('title LIKE ?', '%' + content)
+  def self.search_for(search_word, method)
+    if method == "parfect"
+      @diary = Diary.where("title LIKE?","#{search_word}")
+    elsif method == "forward"
+      @diary = Diary.where("title LIKE?","#{search_word}%")
+    elsif method == "backward"
+      @diary = Diery.where("title LIKE?","%#{search_word}")
+    elsif method == "partial"
+      @diary = Diary.where("title LIKE?","%#{search_word}%")
     else
-      Customer.where('title LIKE ?', '%' + content + '%')
+      @diary = Diary.all
     end
   end
+  # def self.search_for(content, method)
+  #   if method == 'perfect'
+  #     Customer.where(title: content)
+  #   elsif method == 'forward'
+  #     Cutomer.where('title LIKE ?', content + '%')
+  #   elsif method == 'backward'
+  #     Customer.where('title LIKE ?', '%' + content)
+  #   else
+  #     Customer.where('title LIKE ?', '%' + content + '%')
+  #   end
+  # end
   # def self.search_for(content, method)
   #   if method == 'perfect'
   #     where(title: content)
