@@ -30,7 +30,6 @@ Rails.application.routes.draw do
       end
 
       resources :customers,  only: %i(show edit update index ) do
-        post '/customers' => 'customers#create', as: 'create_diary'
         member do
         get 'favorites' , to: 'customers#favorite'
         end

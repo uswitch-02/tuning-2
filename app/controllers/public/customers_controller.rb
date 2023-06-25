@@ -28,26 +28,6 @@ before_action :ensure_guest_user, only: [:edit]
     @customers = Customer.all.page(params[:page]).per(10)
   end
 
-
-  def create
-    @customer = current_customer
-    @diary = Diary.new(diary_params)
-    @diary.score = Language.get_data(diary_params[:body])
-    @diary.customer_id = current_customer.id
-    if @diary.save
-      #グラフに関するデータを取得しています。
-      @diary_data = Diary.pluck(:score)
-      flash[:notice] = "投稿できました"
-      redirect_to diary_path(@diary)
-    else
-      @diarys = @customer.diarys
-      flash[:notice] = "投稿に失敗しました"
-      redirect_to customer_path(@customer.id)
-    end
-  end
-
-
-
   def edit
      @customer = current_customer
   end
@@ -105,7 +85,4 @@ before_action :ensure_guest_user, only: [:edit]
     params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :pen_name, :introduction, :is_published )
   end
 
-  def diary_params
-    params.require(:diary).permit(:title, :body, :is_draft, sentiment_ids: [])
-  end
 end

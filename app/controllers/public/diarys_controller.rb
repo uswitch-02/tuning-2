@@ -13,20 +13,19 @@ class Public::DiarysController < ApplicationController
     @current_customer = current_customer
     @diary = Diary.find(params[:id])
     @comment = Comment.new
+    @new_diary = Diary.new
   end
 
   def create
-    @diary = Diary.new(diary_params)
-    @diary.score = Language.get_data(diary_params[:body])
-    @diary.customer_id = current_customer.id
-    if @diary.save
-      #グラフに関するデータを取得しています。
-      @diary_data = Diary.pluck(:score)
+    diary = Diary.new(diary_params)
+    diary.score = Language.get_data(diary_params[:body])
+    diary.customer_id = current_customer.id
+    if diary.save
       flash[:notice] = "投稿できました"
       redirect_to action: :index
     else
      flash[:notice] = "投稿に失敗しました"
-     redirect_to action: :show, id: params[:diary_id]
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -53,7 +52,7 @@ class Public::DiarysController < ApplicationController
 private
 
   def diary_params
-    params.require(:diary).permit(:title, :body, :is_draft, sentiment_ids: [])
+    params.permit(:title, :body, :is_draft, sentiment_ids: [])
   end
 
   def article_params
