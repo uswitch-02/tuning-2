@@ -12,18 +12,19 @@ class Customer < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :reports, dependent: :destroy
   has_many :favorites, dependent: :destroy
-# 自分がフォローされる（被フォロー）側の関係性
+  has_many :favorite_diaries, through: :favorites, source: :diary
+  # 自分がフォローされる（被フォロー）側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-# 被フォロー関係を通じて参照⇒自分をフォローしている人
+  # 被フォロー関係を通じて参照⇒自分をフォローしている人
   has_many :followers, through: :reverse_of_relationships, source: :follower
 
-# 自分がフォローする側の（与フォロー）の関係性
+  # 自分がフォローする側の（与フォロー）の関係性
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
-# 与フォロー関係を通じて参照⇒自分がフォローしている人
+  # 与フォロー関係を通じて参照⇒自分がフォローしている人
   has_many :followings, through: :relationships, source: :followed
 
     # バリデーション
-    with_options presence: true do
+  with_options presence: true do
     validates :first_name
     validates :last_name
     validates :pen_name
@@ -31,8 +32,8 @@ class Customer < ApplicationRecord
     validates :encrypted_password, presence: true,length: { minimum: 6 }
 
     with_options format: { with: /\A[ァ-ヶー－]+\z/, message: 'は全角カタカナで入力して下さい。'} do
-    validates :first_name_kana, presence: true
-    validates :last_name_kana, presence: true
+      validates :first_name_kana, presence: true
+      validates :last_name_kana, presence: true
     end
   end
 
