@@ -1,4 +1,11 @@
 ja:
+  activerecord:
+    models:
+      customer: ユーザー
+    attributes:
+      email: メールアドレス
+      password: パスワード
+      
   enums:
     customer:
       is_deleted:
@@ -15,3 +22,4 @@ ja:
       is_published:
         true: "公開"
         false: "非公開"
+
