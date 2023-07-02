@@ -1,0 +1,28 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short:   "%Y/%m/%d"
+  activerecord:
+    models:
+      customer: "ユーザー"
+      diary: "投稿"
+    attributes:
+      customer:
+        email: "メールアドレス"
+        password: "パスワード"
+        first_name: "名"
+        last_name: "姓"
+        first_name_kana: "メイ"
+        last_name_kana: "セイ"
+        pen_name: "ユーザーネーム"
+      diary:
+        title: "タイトル"
+        body: "投稿内容"
+  errors:
+    models:
+      diary:
+        attributes:
+          title:
+          body:
+            required: "が入力されていません。"
