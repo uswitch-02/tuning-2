@@ -2,6 +2,9 @@ class Public::DiarysController < ApplicationController
   before_action :authenticate_customer!
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
+  def new
+  end
+
   def index
     @diarys = Diary.all.where(is_draft: :posted)
     @diary = Diary.new
@@ -17,15 +20,16 @@ class Public::DiarysController < ApplicationController
   end
 
   def create
-    diary = Diary.new(diary_params)
-    diary.score = Language.get_data(diary_params[:body])
-    diary.customer_id = current_customer.id
-    if diary.save
+    @diary = Diary.new(diary_params)
+    @diary.score = Language.get_data(diary_params[:body])
+    @diary.customer_id = current_customer.id
+    if @diary.save
       flash[:notice] = "投稿できました"
       redirect_to action: :index
     else
      flash[:notice] = "投稿に失敗しました"
-      redirect_back(fallback_location: root_path)
+     render :new
+      # redirect_back(fallback_location: root_path)
     end
   end
 

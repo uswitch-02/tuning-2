@@ -1,11 +1,12 @@
 <%= form_with url: diarys_path, method: :post, local: true do |f| %>
+<%= render 'layouts/error_messages', object: f.object %>
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control diary_title' %>
+    <%= f.text_field :title, class: 'form-control diary_title', placeholder: "~50字まで" %>
   </div>
   <div class="form-group">
     <%= f.label :opinion %>
-    <%= f.text_area :body, class: 'form-control diary_body' %>
+    <%= f.text_area :body, class: 'form-control diary_body', placeholder: "~200字まで"%>
   </div>
   <!--投稿に着けるタグの表示-->
     <div class='form-group'>
