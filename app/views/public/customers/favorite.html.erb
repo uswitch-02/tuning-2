@@ -1,4 +1,23 @@
-いいね一覧
-<% @favorite_diaries.each do |diary|%>
-  <%= diary.title %>
-<% end %>
+<!--いいね一覧-->
+<section class="py-5" id="course">
+  <div class='container text-center py-3'>
+    <div class='row pb-3'>
+      <div class="col">
+        <h4>いいね一覧</h4>
+      </div>
+    </div>
+    <div class="row g-4">
+
+
+      <!--いいねした記事-->
+      <div class="col-md-4">
+        <!--カード風-->
+        <% @favorite_diaries.each do |diary|%>
+          <div class="border p-3 shadow rounded-pill">
+            <%= diary.title %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
