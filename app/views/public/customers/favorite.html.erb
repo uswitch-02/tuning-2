@@ -1,22 +1,28 @@
 <!--いいね一覧-->
 <section class="py-5" id="course">
-  <div class='container text-center py-3'>
-    <div class='row pb-3'>
-      <div class="col">
-        <h4>いいね一覧</h4>
+  <div class=favorite_background_color>
+    <div class='container text-center py-3'>
+      <div class='row pb-3'>
+        <div class="col">
+          <h4>いいね一覧</h4>
+        </div>
       </div>
-    </div>
-    <div class="row g-4">
+      <div class="row g-4">
 
 
       <!--いいねした記事-->
-      <div class="col-md-4">
+      <div class="d-flex col-mx-md-4">
         <!--カード風-->
         <% @favorite_diaries.each do |diary|%>
-          <div class="border p-3 shadow rounded-pill">
-            <%= diary.title %>
-          </div>
-        <% end %>
+
+
+                    <div class="border p-3 shadow rounded-pill  w-100 h-100">
+              <%= diary.title %>
+              <p><%= diary.body %></p>
+            </div>
+  
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
