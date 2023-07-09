@@ -1,8 +1,11 @@
 
-// * {
-//   font-family: 'Catamaran', sans-serif;
-//   font-family: 'Lobster', cursive;
-// }
+// アプリケーション基本フォントの変更のscss
+body {
+font-family: 'Catamaran', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Zen Maru Gothic', sans-serif;
+font-family: 'Zen Old Mincho', serif;
+}
 
 // ヘッダー関連のscss
 input#content {
