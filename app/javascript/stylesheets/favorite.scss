@@ -3,3 +3,18 @@
   width: 100%; /* 横幅いっぱい */
   height: 1000px; /* 高さ1400px（多めに設定） */
 }
+
+.favorite_border {
+  margin: 20px;
+  width: 160px;
+  height: 160px;
+  background: #e61b8c;
+  border-radius: 55% 70% 51% 98% / 52% 63% 62% 58%;
+  background-color: #ffe4e1;
+      transition: box-shadow 0.5s;
+      box-shadow:
+        10px 10px 30px rgba(18, 47, 61, 0.5),
+        -10px -10px 30px rgba(255, 255, 255, 0.9),
+        inset 10px 10px 30px transparent,
+        inset -10px -10px 30px transparent;
+}
