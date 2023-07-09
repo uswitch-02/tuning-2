@@ -17,9 +17,11 @@
         <% @favorite_diaries.each do |diary|%>
 
 
-            <div class="favorite_border">
-              <%= diary.title %>
-              <p><%= diary.body %></p>
+            <div class="group favorite_border">
+              <div class="box">
+                <%= diary.title %>
+                <p><%= diary.body %></p>
+              </div>
             </div>
 
           <% end %>
