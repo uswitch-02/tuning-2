@@ -80,6 +80,18 @@ a.favorite_text_body_link:hover {
   --d: -7px;
 }
 
+a.favorite_write_user_link {
+  	color: #666666;
+   	cursor: pointer;
+    text-decoration: none;
+    background:
+        radial-gradient(circle 7px, currentColor 90%, transparent) bottom var(--d, -14px)
+        left 50%/12px 14px repeat-x;
+    transition: 0.5s;
+}
+a.favorite_write_user_link:hover {
+  --d: -7px;
+}
 // タイトルエフェクトのscss
 .favorites{
   font-size: 10vw;

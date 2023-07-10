@@ -1,6 +1,5 @@
 <!--いいね一覧-->
 <div class=favorite_background_color>
-  <%#= render "public/customers/favorite-back" %>
   <section class="py-5" id="course">
 
     <div class='container text-center py-3'>
@@ -9,14 +8,15 @@
 	         <h1>
 		        <span class="favorites">favorites</span>
 	        </h1>
+	        <p><%= @favorite_post_customer.pen_name %>さんがお気に入りした日記はこちらです。</p>
+	        <p>記事から詳細ページに移動できます。コメントをしてみましょう！</p>
         </div>
       </div>
 
       <div class="row g-4">
-        
-      <!--いいねした記事-->
+        <!--いいねした記事-->
       <div class="d-flex col-mx-md-4">
-        <!--カード風-->
+        <!--ニューモニズム-->
         <% @favorite_diaries.each do |diary|%>
 
 
@@ -25,7 +25,10 @@
                 <span class="favorite_text_title">
                   <%= link_to diary.title, diary_path(diary), class: "favorite_text_title_link" %>
                 </span>
-                  <span class="favorite_text_body"><%= link_to diary.body, diary_path(diary),class: "favorite_text_body_link" %></span>
+                  <span class="favorite_text_body">
+                    <%= link_to diary.body, diary_path(diary),class: "favorite_text_body_link" %>
+                    <%= link_to "投稿User：#{diary.customer.pen_name}", diary_path(diary), class: "favorite_write_user_link" %>
+                  </span>
               </div>
             </div>
           <% end %>

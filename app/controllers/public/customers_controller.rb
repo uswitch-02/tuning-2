@@ -63,6 +63,7 @@ before_action :ensure_guest_user, only: [:edit]
     def favorite
       customer = Customer.find(params[:id])
       # diary_ids= Favorite.where(customer_id: customer.id).pluck(:diary_id)
+      @favorite_post_customer = customer
       @favorite_diaries = customer.favorite_diaries
       # @favorite_diaries = Diary.where(id: diary_ids)
     end
