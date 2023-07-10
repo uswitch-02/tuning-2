@@ -1,0 +1,16 @@
+.diary_show_background {
+  background-color: #dfd8d9;
+  width: 100%; /* 横幅いっぱい */
+  height: 1400px; /* 高さ1400px（多めに設定） */
+}
+
+.user_info_back_base {
+  margin-top: 20px;
+  width: 300px;
+  height: 450px;
+  border-radius: 20px;
+  background: #dfd8d9;
+  box-shadow:  9px 9px 18px #beb8b8,
+             -9px -9px 18px #fff8fa;
+}
+

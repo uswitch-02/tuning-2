@@ -1,5 +1,7 @@
 <table class='table'>
-  <tr><%= image_tag customer.get_profile_image, size:'100x100' %></tr>
+    <tr>
+      <%= image_tag customer.get_profile_image, size: '100x100'%>
+    </tr>
 
   <tr>
 	  <th>name</th>
@@ -40,7 +42,7 @@
     <% if current_customer != customer && customer.pen_name != "guestuser"%>
         <td><%= render "public/relationships/btn", customer: customer %></td>
     <% else %>
-        <%= link_to edit_customer_path, class: "btn btn-outline-secondary btn-block" do %>
+        <%= link_to edit_customer_path, class: "btn btn-outline-secondary btn-lg mx-auto" do %>
         <i class="fas fa-user-cog"></i>
         <% end %>
     <% end %>
