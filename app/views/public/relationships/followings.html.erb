@@ -1,4 +1,5 @@
-<h2>Follow Users</h2>
+<h1>Follow Users</h1>
+<h3><%= @customer_name.pen_name %>さんがフォローしているUsers</h3>
 <% if @customer.exists? %>
   <%= render 'public/customers/index', customers: @customer %>
 <% else %>
