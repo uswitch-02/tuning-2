@@ -1,5 +1,5 @@
 .diary_show_background {
-  background-color: #dfd8d9;
+  background-color: #e0dcdc;
   width: 100%; /* 横幅いっぱい */
   height: 1400px; /* 高さ1400px（多めに設定） */
 }
@@ -8,9 +8,61 @@
   margin-top: 20px;
   width: 300px;
   height: 450px;
-  border-radius: 20px;
-  background: #dfd8d9;
-  box-shadow:  9px 9px 18px #beb8b8,
-             -9px -9px 18px #fff8fa;
+border-radius: 41px;
+background: #e0dcdc;
+box-shadow:  7px 7px 14px #bebbbb,
+             -7px -7px 14px #fffdfd;
 }
+
+.diary_info_back_base {
+  margin-top: 20px;
+  width: 300px;
+  height: 600px;
+border-radius: 41px;
+background: #e0dcdc;
+box-shadow:  7px 7px 14px #bebbbb,
+             -7px -7px 14px #fffdfd;
+}
+
+
+
+// info&formのニューフォフィズム
+
+$ruler: 16px;
+$color-red: #AE1100;
+$color-bg: #EBECF0;
+$color-shadow: #BABECC;
+$color-white: #FFF;
+
+.segment {
+  padding: $ruler*2 0;
+  text-align: center;
+}
+
+label {
+  text-align: center;
+  display: block;
+  margin-bottom: $ruler*1.5;
+  width: 100%;
+}
+
+.user_info{
+  border-radius: $ruler*20;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: $ruler/2;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 85%;
+  padding: $ruler;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+
 

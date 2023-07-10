@@ -16,12 +16,18 @@
 
       <!--各インフォメーション事に区画を分けるためのscssをつける-->
         <div class='user_info_back_base'>
+          <div class="segment">
             <h3>User info</h3>
+          </div>
             <%= render 'public/customers/info', customer: @diary.customer %>
         </div>
-          <h2 class="mt-3">diary</h2>
+      <!--各インフォメーション事に区画を分けるためのscssをつける-->
+        <div class='diary_info_back_base'>
+          <div class="segment">
+            <h2 class="mt-3">diary</h2>
+          </div>
             <%= render 'new_form' %>
-
+        </div>
       </div>
 
 
