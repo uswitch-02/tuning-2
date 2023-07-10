@@ -24,15 +24,15 @@
       </div>
   </div>
     <!--投稿の公開・非公開を選択するラジオボタン-->
-  <div class= "form-group">
-    <%= f.radio_button :is_draft, Diary.is_drafts.key(false) %>
-    <%= f.label :is_drafts_posted, Diary.is_drafts_i18n[:posted] %>
-  </div>
-  <div class= "form-group">
-    <%= f.radio_button :is_draft, Diary.is_drafts.key(true) %>
-    <%= f.label :is_drafts_draft, Diary.is_drafts_i18n[:draft] %>
-  </div>
-  <div class="form-group">
-    <%= f.submit class: 'btn btn-success' %>
-  </div>
+<div class="form-group">
+  <%= f.radio_button :is_draft, Diary.is_drafts.key(false), id: "is_drafts_posted" %>
+  <%= f.label :is_drafts_posted, Diary.is_drafts_i18n[:posted], for: "is_drafts_posted" %>
+</div>
+<div class="form-group">
+  <%= f.radio_button :is_draft, Diary.is_drafts.key(true), id: "is_drafts_draft" %>
+  <%= f.label :is_drafts_draft, Diary.is_drafts_i18n[:draft], for: "is_drafts_draft" %>
+</div>
+<div class="form-group">
+  <%= f.submit "Submit", class: 'btn btn-success' %>
+</div>
 <% end %>

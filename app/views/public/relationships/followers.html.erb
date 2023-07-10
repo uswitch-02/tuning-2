@@ -1,6 +1,7 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-10'>
+    <div class='col-md-12'>
+      <table>
       <h1>Fllower Users</h1>
       <h3><%= @customer_name.pen_name %>さんをフォローしているUsers</h3>
       <% if @customer.exists? %>
@@ -8,6 +9,7 @@
       <% else %>
         <p>ユーザーはいません</p>
       <% end %>
+      </table>
     </div>
   </div>
 </div>
