@@ -7,7 +7,7 @@
 .user_info_back_base {
   margin-top: 20px;
   width: 300px;
-  height: 450px;
+  height: 630px;
 border-radius: 41px;
 background: #e0dcdc;
 box-shadow:  7px 7px 14px #bebbbb,
@@ -15,7 +15,7 @@ box-shadow:  7px 7px 14px #bebbbb,
 }
 
 .diary_info_back_base {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 300px;
   height: 600px;
 border-radius: 41px;
@@ -46,6 +46,44 @@ label {
   width: 100%;
 }
 
+button {
+  border-radius: $ruler*20;
+  padding: $ruler;
+  color:#61677C;
+  font-weight: bold;
+  box-shadow: -5px -5px 10px $color-white,  3px 3px 5px $color-shadow;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+  }
+
+  &:active {
+    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+
+  &.unit {
+    border-radius: $ruler/2;
+    line-height: 0;
+    width: $ruler*3;
+    height: $ruler*3;
+    display:inline-flex;
+    justify-content: center;
+    align-items:center;
+    margin: 0 $ruler/2;
+    font-size: $ruler*1.2;
+  }
+
+
+  &.red {
+    display: block;
+    width: 100%;
+    color:$color-red;
+  }
+}
+
 .user_info{
   border-radius: $ruler*20;
   margin-top: 10px;
@@ -64,5 +102,59 @@ label {
   }
 }
 
+.user_info_introduction {
+  border-radius: $ruler*20;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: $ruler/2;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 85%;
+  padding: 30px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+.user_info_follw {
+  border-radius: $ruler*20;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: $ruler/2;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 85%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+.user_info_favorites {
+  border-radius: $ruler*20;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: $ruler/2;
+
+  width: 85%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
 
 
+.user_info_profile_btn {
+  ext-align: center;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: $ruler*1.5;
+  width: 100%;
+}
