@@ -1,7 +1,7 @@
 .diary_show_background {
   background-color: #e0dcdc;
   width: 100%; /* 横幅いっぱい */
-  height: 1400px; /* 高さ1400px（多めに設定） */
+  height: 1800px; /* 高さ1400px（多めに設定） */
 }
 
 .user_info_back_base {
@@ -17,7 +17,7 @@ box-shadow:  7px 7px 14px #bebbbb,
 .diary_info_back_base {
   margin-top: 30px;
   width: 350px;
-  height: 600px;
+  height: 900px;
 border-radius: 41px;
 background: #e0dcdc;
 box-shadow:  7px 7px 14px #bebbbb,
@@ -201,7 +201,7 @@ ul {
         border: 1px solid #2196F3;
         color: #fff;
       }
-      
+
       &.clicked {
         background-color: #2196F3;
         border: 1px solid #2196F3;
