@@ -1,59 +1,60 @@
-<label>
-  <tr>
-    <%= image_tag customer.get_profile_image, size: '100x100'%>
-  </tr>
-<label>
-<div class="row">
-  <div class="user_info">
-    name :<%= customer.pen_name %>
-  </div>
-</div>
+<div class="sidebar-text">
+    <tr>
+      <%= image_tag customer.get_profile_image, size: '100x100'%>
+    </tr>
 
-<div class="row">
-  <div class="user_info_introduction">
-    introduction <br>
-    <%= customer.introduction %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="user_info_follw">
-    follows: <%= link_to customer.followings.count, customer_followings_path(customer) %>
-  </div>
-</div>
-
-<div class="row">
-    <div class="user_info_follw">
-      followers: <%= link_to customer.followers.count, customer_followers_path(customer) %>
+  <div class="row">
+    <div class="user_info">
+      name :<%= customer.pen_name %>
     </div>
-</div>
-
-<div class="row">
-  <div class="user_info_favorites">
-    <button class="red" type="button">
-    <%= link_to "お気に入り記事", favorites_customer_path(customer) %><br>
-    </button>
   </div>
-  <div class="user_info_follw">
-      Userの公開設定<br>
-      <% if customer.is_published? %>
-        公開
-      <% else %>
-        非公開
-      <% end %>
+
+  <div class="row">
+    <div class="user_info_introduction">
+      introduction <br>
+      <%= customer.introduction %>
+    </div>
   </div>
-</div>
 
+  <div class="row">
+    <div class="user_info_follw">
+      follows: <%= link_to customer.followings.count, customer_followings_path(customer) %>
+    </div>
+  </div>
 
+  <div class="row">
+      <div class="user_info_follw">
+        followers: <%= link_to customer.followers.count, customer_followers_path(customer) %>
+      </div>
+  </div>
 
-<div class='row'>
-  <div class='user_info_profile_btn'>
-    <% if current_customer != customer && customer.pen_name != "guestuser"%>
-        <td><%= render "public/relationships/btn", customer: customer %></td>
-    <% else %>
-        <%= link_to edit_customer_path, class: "btn btn-outline-secondary btn-lg mx-auto" do %>
-        <i class="fas fa-user-cog"></i>
+  <div class="row">
+    <div class="user_info_favorites">
+      <div class="user-info-favorites-button">
+        <%= link_to "お気に入り記事", favorites_customer_path(customer) %><br>
+      </div>
+    </div>
+    <div class="user_info_follw">
+        Userの公開設定<br>
+        <% if customer.is_published? %>
+          公開
+        <% else %>
+          非公開
         <% end %>
-    <% end %>
+    </div>
+  </div>
+
+
+
+  <div class='row'>
+    <div class='user_info_profile_btn'>
+      <% if current_customer != customer && customer.pen_name != "guestuser"%>
+          <td><%= render "public/relationships/btn", customer: customer %></td>
+      <% else %>
+          <%= link_to edit_customer_path, class: "btn btn-outline-secondary btn-lg mx-auto" do %>
+          <i class="fas fa-user-cog"></i>
+          <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,9 +1,11 @@
+// top・about・favorite以外のページの背景色
 .diary_show_background {
   background-color: #e0dcdc;
   width: 100%; /* 横幅いっぱい */
   height: 1800px; /* 高さ1400px（多めに設定） */
 }
 
+// サイドバーのニューモフィズムのscss
 .user_info_back_base {
   margin-top: 20px;
   width: 350px;
@@ -26,7 +28,7 @@ box-shadow:  7px 7px 14px #bebbbb,
 
 
 
-// info&formのニューフォフィズム
+// info&formのニューフォフィズム（中身の凹凸）
 
 $ruler: 16px;
 $color-red: #AE1100;
@@ -39,14 +41,28 @@ $color-white: #FFF;
   text-align: center;
 }
 
-label {
+.sidebar-text {
   text-align: center;
   display: block;
   margin-bottom: $ruler*1.5;
   width: 100%;
 }
 
-button {
+.radio-button-wrapper {
+  text-align: center;
+  display: block;
+  margin-bottom: $ruler*1.5;
+  width: 100%;
+}
+
+.submit-button-wrapper {
+  text-align: center;
+  display: block;
+  margin-bottom: $ruler*1.5;
+  width: 100%;
+}
+
+.user-info-favorites-button {
   border-radius: $ruler*20;
   padding: $ruler;
   color:#61677C;
@@ -163,6 +179,8 @@ button {
 ul {
   list-style-type: none;
 }
+
+// チェックボックスについてのscss
 
 .checkbox-wrapper {
   margin: 0;
