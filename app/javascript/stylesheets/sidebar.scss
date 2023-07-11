@@ -51,6 +51,15 @@ $color-white: #FFF;
 .radio-button-wrapper {
   text-align: center;
   display: block;
+  margin-top: 20px;
+  margin-bottom: $ruler*1.5;
+  width: 100%;
+}
+
+.radio-button-wrapper-is_drafts_draft {
+  text-align: center;
+  display: block;
+  margin-top: -20px;
   margin-bottom: $ruler*1.5;
   width: 100%;
 }
