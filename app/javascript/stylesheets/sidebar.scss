@@ -158,3 +158,58 @@ button {
   margin-bottom: $ruler*1.5;
   width: 100%;
 }
+
+
+
+// タグ機能の装飾に関するscss
+// section {
+//   max-width: 600px;
+//   margin: 5em auto 2.5em;
+//   position: relative;
+// }
+
+
+// .tag_area02 ul {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+//   justify-content: center;
+// }
+// .tag_area02 ul li {
+//   margin: .15em;
+// }
+// .tag_area02 ul li a {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 65px;
+//   width: 65px;
+//   background-color: #fff;
+//   border: 1px solid #aaa;
+//   border-radius: 50%;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   word-break: break-all;
+//   overflow: hidden;
+//   color: #333;
+//   font-size: 11px;
+//   text-decoration: none;
+//   -webkit-transition: .2s;
+//   transition: .2s;
+//   box-sizing: border-box;
+// }
+// .tag_area02 ul li a:hover {
+//   background-color: #2196F3;
+//   border: 1px solid #2196F3;
+//   color: #fff;
+// }
+
+
+// checkboxのデザインを変える
+input[type=checkbox] {
+  witdth: 20px
+}
+
+input.form-check-input {
+    display: none;
+}

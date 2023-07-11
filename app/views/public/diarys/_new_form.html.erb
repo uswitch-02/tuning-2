@@ -12,15 +12,11 @@
     <div class='form-group'>
       <div class= "row">
           <%= f.collection_check_boxes(:sentiment_ids, Sentiment.all, :id, :name) do |sentiment| %>
-              <div class='form-check'>
-                <table class="table">
-                  <%= sentiment.label class: 'form-check-label' do %>
+                      <%= sentiment.label class: 'form-check-label' do %>
                       <%= sentiment.check_box class: 'form-check-input' %>
                       <%= sentiment.text %>
-                  <% end %>
-                </table>
-              </div>
-        <% end %>
+                    <% end %>
+          <%end %>
       </div>
   </div>
     <!--投稿の公開・非公開を選択するラジオボタン-->
