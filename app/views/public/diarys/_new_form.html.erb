@@ -11,6 +11,7 @@
 
 
   <!--投稿に着けるタグの表示-->
+  <div class="checkbox-neumorphism">
     <div class="checkbox-wrapper">
       <%= f.collection_check_boxes(:sentiment_ids, Sentiment.all, :id, :name) do |sentiment| %>
         <%= sentiment.label class: "form-check-label" do %>
@@ -19,6 +20,7 @@
         <% end %>
       <% end %>
     </div>
+  </div>
 
 
     <!--投稿の公開・非公開を選択するラジオボタン-->

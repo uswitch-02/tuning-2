@@ -62,6 +62,8 @@ $color-white: #FFF;
   width: 100%;
 }
 
+
+// お気に入りの投稿のボタン
 .user-info-favorites-button {
   border-radius: $ruler*20;
   padding: $ruler;
@@ -92,12 +94,6 @@ $color-white: #FFF;
     font-size: $ruler*1.2;
   }
 
-
-  &.red {
-    display: block;
-    width: 100%;
-    color:$color-red;
-  }
 }
 
 .user_info{
@@ -174,6 +170,27 @@ $color-white: #FFF;
   margin-bottom: $ruler*1.5;
   width: 100%;
 }
+
+// チェックボックスのニューモフィズム
+.checkbox-neumorphism {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 97%;
+  padding: 30px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+
+}
+
+
 
 // タグの箇条書きの点を消す
 ul {
