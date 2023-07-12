@@ -33,21 +33,6 @@ input[value="ログアウト"]{
   border: none;
 }
 
-// フッター関連のscss
-footer {
-  width: 100%;
-  height: 120px; 
-  text-align: center;
-  padding: 50px 0;
-  background: -webkit-linear-gradient(-101deg, rgb(206, 71, 71), rgb(211, 216, 201));
-  background: linear-gradient(-101deg, rgb(206, 71, 71), rgb(211, 216, 201));
-}
-.footer-text {
-  color: #fff;
-}
-
-
-
 // アバウトページに移動するリンク
 .top_about_link_image{
   width: 200px;
