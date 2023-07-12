@@ -1,13 +1,6 @@
-#about-section .about-background {
-  background-image: url("../images/tuning-about-1.png");
-  background-size: cover;
-  width: 100%;
+.about-background {
+  background: url("../images/tuning-about-cliping-main.png") left top / auto 100% no-repeat;
+  padding-bottom: 60px; /* フッターの高さ分のマージンを追加 */
   height: 800px;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-}
-body {
-  margin: 0;
-  padding: 0;
+  background-size: cover;
 }
