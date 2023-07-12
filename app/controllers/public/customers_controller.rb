@@ -8,7 +8,8 @@ before_action :ensure_guest_user, only: [:edit]
     @diary = Diary.new
     @comment = Comment.new
 
-    @diarys = Diary.where(customer_id: params[:id])
+    # 個人の投稿を新しい順に上から表示する
+    @diarys = Diary.order(created_at: :desc).where(customer_id: params[:id])
     @diary_data = []# @diary_dataを空の配列で初期化する
     @diarys.each do |diary|
     if diary.score.present? && diary.created_at.present?
@@ -25,7 +26,8 @@ before_action :ensure_guest_user, only: [:edit]
 
   def index
     @customer = current_customer
-    @customers = Customer.all.page(params[:page]).per(10)
+    # 登録ユーザーを新規順に上から
+    @customers = Customer.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def edit
