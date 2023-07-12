@@ -4,4 +4,40 @@
   height: 830px;
   background-size: cover;
   background-position: 0% 0%;
+  // position: relative; /* 基準位置とする */
+}
+
+.about-box {
+  width: 500px;       /* 適当な幅を指定 */
+  height: 300px;      /* 適当な高さを指定 */
+  position: relative; /* 基準位置とする */
+}
+
+.about-box img {
+  // width: 300px;       /* 適当な幅を指定 */
+  position: absolute; /* 相対位置に指定 */
+}
+
+
+.about_center_image_moji {
+  // position: absolute; /* 相対位置に指定 */
+  // position: relative; /* 基準位置とする */
+  height: 600px;
+  width: 600px;
+  margin-top: 100px;
+  margin-left: 450px;
+  animation:11s linear infinite rotation1;
+}
+
+.about_center_image_hito {
+  // position: absolute; /* 相対位置に指定 */
+  height: 400px;
+  width: 400px;
+  margin-top: 190px;
+  margin-left: 550px;
+}
+
+@keyframes rotation1{
+  0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
 }
