@@ -35,8 +35,8 @@ class Customer < ApplicationRecord
       validates :first_name_kana, presence: true
       validates :last_name_kana, presence: true
     end
-    validates :introduction,presence:true,length:{maximum:30}
   end
+    validates :introduction,length:{maximum:30}
 
   def self.guest
     guest_email = "guest_#{SecureRandom.hex}@example.com"

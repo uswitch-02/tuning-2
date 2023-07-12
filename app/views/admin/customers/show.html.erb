@@ -1,45 +1,62 @@
-<div class="container">
-    <div class = "row">
+<div class='diary_show_background'>
+  <div class='container'>
+    <div class='row'>
       <%= flash[:notice] %>
-      <div class = "col-5">
+
+      <div class='col-md-4'>
+
         <h2><%= @customer.full_name %>さんの会員詳細</h2>
-  
-          <table class="mt-2 mb-2">
-            <tr>
-              <td>会員ID</td>
-              <td><%= @customer.id %></td>
-            </tr>
-            <tr>
-              <td>氏名</td>
-              <td><%= @customer.last_name %></td>
-              <td><%= @customer.first_name %></td>
-            </tr>
-            <tr>
-              <td>フリガナ</td>
-              <td><%= @customer.last_name_kana %></td>
-              <td><%= @customer.first_name_kana %></td>
-            </tr>
-            <tr>
-              <td>メールアドレス</td>
-              <td><%= @customer.email %></td>
-            </tr>
-            <tr>
-              <td>会員ステータス</td>
-                <!--会員ステータスを表示し、色分け-->
-            <% if @customer.is_deleted == "exist" %>
-              <td style = "color: #4ec51e;">有効</td>
-            <% else %>
-              <td style = "color: #ff3838;">退会</td>
-            <% end %>
-            </tr>
-            <tr>
-              <td></td>
-              <td><%= link_to "編集する",edit_admin_customer_path(@customer), class: "btn btn-success" %></td>
-            </tr>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <th scope="col">項目</th>
+                  <th scope="col">登録内容</th>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>会員ID</td>
+                <td><%= @customer.id %></td>
+              </tr>
+              <tr>
+                <td>氏名</td>
+                <td><%= @customer.last_name %></td>
+                <td><%= @customer.first_name %></td>
+              </tr>
+              <tr>
+                <td>フリガナ</td>
+                <td><%= @customer.last_name_kana %></td>
+                <td><%= @customer.first_name_kana %></td>
+              </tr>
+              <tr>
+                <td>メールアドレス</td>
+                <td><%= @customer.email %></td>
+              </tr>
+              <tr>
+                <td>会員ステータス</td>
+                  <!--会員ステータスを表示し、色分け-->
+              <% if @customer.is_deleted == "exist" %>
+                <td style = "color: #4ec51e;">有効</td>
+              <% else %>
+                <td style = "color: #ff3838;">退会</td>
+              <% end %>
+              </tr>
+              <tr>
+                <td></td>
+                <td><%= link_to "編集する",edit_admin_customer_path(@customer), class: "btn btn-success" %></td>
+              </tr>
+            </tbody>
           </table>
+
+
         </div>
-        <div class = "col-7">
+      <div class='col-md-7 offset-md-1'>
           <%= render "admin/diarys/index", diarys: @diarys %>
       </div>
     </div>
+  </div>
 </div>

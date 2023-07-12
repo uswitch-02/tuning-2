@@ -136,6 +136,9 @@ $color-white: #FFF;
   appearance: none;
   -webkit-appearance: none;
 
+  width: 325px;
+  height: 100px;
+
   &:focus {
     box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
   }
