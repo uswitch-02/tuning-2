@@ -40,17 +40,40 @@ input[value="ログアウト"]{
   margin-top: 400px;
   margin-left: 250px;
 }
+
+
+// アバウトページから新規登録画面に移る画像リンク
+// 親
 .about_signup_link_image{
   width: 200px;
   height: 200px;
-  margin-top: 500px;
-  margin-left: 1200px;
+  margin-top: 580px;
+  margin-left: 300px;
+
+  &:before{
+  content:"";
+  display:block;
+  padding-top: 56.25%;/*ここには横幅に対して縦が何%になるかを記述*/
+
+  }
+
+  &:hover{
+  transform:scale(1.1);
+  }
 }
-// .top_home_icon_image{
-//   width: 20px;
-//   height: 20px;
-// }
-// }
+
+// 子
+.about_signup_link_image_wrappe img{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  transition:0.3s;
+  display:block;
+
+}
+
 // 感情スコアをグラフに関する
 .chart_area{
   height: 500px !important;
