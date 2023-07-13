@@ -52,7 +52,7 @@
               <% end %>
             </td>
 
-            <td class=<%= "favorite_buttons_" + @diary.id.to_s %> >
+            <td id=<%= "favorite_buttons_" + @diary.id.to_s %> >
               <%= render "public/favorites/btn", diary: @diary %>
             </td>
 
