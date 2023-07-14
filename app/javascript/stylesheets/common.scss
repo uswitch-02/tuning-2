@@ -33,6 +33,43 @@ input[value="ログアウト"]{
   border: none;
 }
 
+input[id="admin_email"] {
+  border: 2px solid;
+  border-image: linear-gradient(to right, #00ffd5 0%, #0f3dd7 100%);
+  border-image-slice: 1;
+}
+
+input[id="admin_password"] {
+  border: 2px solid;
+  border-image: linear-gradient(to right, #00ffd5 0%, #0f3dd7 100%);
+  border-image-slice: 1;
+}
+
+input[value="Log in"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #333333;
+  font-size: 18px;
+  border-radius: 0px;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  border: 2px solid #333333;
+  transition: 0.3s;
+  box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+  background-color: #ffffff;
+
+
+  &:hover {
+  box-shadow: 0 0 #333;
+  color: #fff;
+  background-color: #333;
+  }
+}
+
 // アバウトページに移動するリンク
 .top_about_link_image{
   width: 200px;
@@ -93,10 +130,6 @@ input[value="ログアウト"]{
   display:block;
 
 }
-
-
-
-
 
 
 // 感情スコアをグラフに関する
