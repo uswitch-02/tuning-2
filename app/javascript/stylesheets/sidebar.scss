@@ -7,9 +7,9 @@
 
 // サイドバーのニューモフィズムのscss
 .user_info_back_base {
-  margin-top: 20px;
-  width: 350px;
-  height: 660px;
+margin-top: 20px;
+width: 350px;
+height: 660px;
 border-radius: 41px;
 background: #e0dcdc;
 box-shadow:  7px 7px 14px #bebbbb,
@@ -17,9 +17,9 @@ box-shadow:  7px 7px 14px #bebbbb,
 }
 
 .diary_info_back_base {
-  margin-top: 30px;
-  width: 350px;
-  height: 900px;
+margin-top: 30px;
+width: 350px;
+height: 900px;
 border-radius: 41px;
 background: #e0dcdc;
 box-shadow:  7px 7px 14px #bebbbb,
@@ -37,7 +37,7 @@ $color-shadow: #BABECC;
 $color-white: #FFF;
 
 .segment {
-  padding: 320px;
+  padding: $ruler;
   text-align: center;
 }
 

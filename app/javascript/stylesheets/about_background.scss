@@ -1,10 +1,10 @@
 .about-background {
-  // background: url("../images/tuning-about-cliping-main.png") left top / auto 100% no-repeat;
-  // // padding-bottom: 50px; /* フッターの高さ分のマージンを追加 */
+  background: url("../images/tuning-about-cliping-main.png") left top / auto 100% no-repeat;
+  // padding-bottom: 50px; /* フッターの高さ分のマージンを追加 */
   height: 830px;
   background-size: cover;
   background-position: 0% 0%;
-  // position: relative; /* 基準位置とする */
+  position: relative; /* 基準位置とする */
 
   // @media screen and (min-width:425px) {
   //   /* 画面サイズが425px以上の場合に適用される */
