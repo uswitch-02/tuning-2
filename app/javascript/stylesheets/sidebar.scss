@@ -37,14 +37,14 @@ $color-shadow: #BABECC;
 $color-white: #FFF;
 
 .segment {
-  padding: $ruler*2 0;
+  padding: 320px;
   text-align: center;
 }
 
 .sidebar-text {
   text-align: center;
   display: block;
-  margin-bottom: $ruler*1.5;
+  margin-bottom: 24Px;
   width: 100%;
 }
 
@@ -52,7 +52,7 @@ $color-white: #FFF;
   text-align: center;
   display: block;
   margin-top: 20px;
-  margin-bottom: $ruler*1.5;
+  margin-bottom: 24px;
   width: 100%;
 }
 
@@ -60,21 +60,21 @@ $color-white: #FFF;
   text-align: center;
   display: block;
   margin-top: -20px;
-  margin-bottom: $ruler*1.5;
+  margin-bottom: 24px;
   width: 100%;
 }
 
 .submit-button-wrapper {
   text-align: center;
   display: block;
-  margin-bottom: $ruler*1.5;
+  margin-bottom: 24px;
   width: 100%;
 }
 
 
 // お気に入りの投稿のボタン
 .user-info-favorites-button {
-  border-radius: $ruler*20;
+  border-radius: 320px;
   padding: $ruler;
   color:#61677C;
   font-weight: bold;
@@ -92,24 +92,24 @@ $color-white: #FFF;
   }
 
   &.unit {
-    border-radius: $ruler/2;
+    border-radius: 8px;
     line-height: 0;
-    width: $ruler*3;
-    height: $ruler*3;
+    width: 48px;
+    height: 48px;
     display:inline-flex;
     justify-content: center;
     align-items:center;
-    margin: 0 $ruler/2;
-    font-size: $ruler*1.2;
+    margin: 0 8px;
+    font-size: 48px;
   }
 
 }
 
 .user_info{
-  border-radius: $ruler*20;
+  border-radius: 320px;
   margin-top: 10px;
   margin-left: 25px;
-  margin-right: $ruler/2;
+  margin-right: 8px;
   box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
   width: 85%;
   padding: $ruler;
@@ -124,10 +124,10 @@ $color-white: #FFF;
 }
 
 .user_info_introduction {
-  border-radius: $ruler*20;
+  border-radius: 320;
   margin-top: 10px;
   margin-left: 25px;
-  margin-right: $ruler/2;
+  margin-right: 8px;
   box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
   width: 85%;
   padding: 10px;
@@ -147,10 +147,10 @@ $color-white: #FFF;
 
 
 .user_info_follw {
-  border-radius: $ruler*20;
+  border-radius: 320px;
   margin-top: 10px;
   margin-left: 25px;
-  margin-right: $ruler/2;
+  margin-right: 8px;
   box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
   width: 85%;
   box-sizing: border-box;
@@ -164,10 +164,10 @@ $color-white: #FFF;
 }
 
 .user_info_favorites {
-  border-radius: $ruler*20;
+  border-radius: 320px;
   margin-top: 10px;
   margin-left: 25px;
-  margin-right: $ruler/2;
+  margin-right: 8px;
 
   width: 85%;
   box-sizing: border-box;
@@ -181,7 +181,7 @@ $color-white: #FFF;
   ext-align: center;
   display: block;
   margin-top: 10px;
-  margin-bottom: $ruler*1.5;
+  margin-bottom: 24px;
   width: 100%;
 }
 
@@ -258,4 +258,35 @@ ul {
       }
     }
   }
+}
+
+.user_info_admin{
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 8px;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 85%;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+
+
+.user_info_back_base_admin {
+  margin-top: 20px;
+  width: 350px;
+  height: 680px;
+border-radius: 41px;
+background: #e0dcdc;
+box-shadow:  7px 7px 14px #bebbbb,
+             -7px -7px 14px #fffdfd;
+
 }
