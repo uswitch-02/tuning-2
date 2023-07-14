@@ -13,6 +13,7 @@ import "popper.js";
 import "bootstrap";
 import "./vivus";
 import "../stylesheets/application";
+import '../stylesheets/mystyle.css'
 // import '@fontawesome/fontawesome-free/js/all'
 require('jquery')
 Rails.start()
