@@ -207,8 +207,8 @@ input[id="customer_email"] {
 .about_signup_link_image{
   width: 200px;
   height: 200px;
-  margin-top: 580px;
-  margin-left: 300px;
+  // margin-top: 580px;
+  // margin-left: 300px;
 
   &:before{
   content:"";
@@ -222,6 +222,8 @@ input[id="customer_email"] {
   }
 }
 
+
+
 // 子
 .about_signup_link_image_wrappe img{
   position:absolute;
@@ -234,7 +236,38 @@ input[id="customer_email"] {
 
 }
 
+@media screen and (max-width: 425px) {
+  .about_signup_link_image_wrappe img{
+    top: 20%;
+    left: 10%;
+    width: 40vw;
+    height: 10vh;
+  }
+}
 
+
+@media screen and (max-width: 768px) {
+  .about_signup_link_image_wrappe img{
+    top: 30%;
+    left: 10%;
+    height: 10vh;
+    width: 10vh;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .about_signup_link_image_wrappe img{
+    top: 30%;
+    left: 60%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .about_signup_link_image_wrappe img{
+    top: 60%;
+    left: 20%;
+  }
+}
 // 感情スコアをグラフに関する
 .chart_area{
   height: 500px !important;
