@@ -20,6 +20,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+
+// タグ機能、チェックボックスに関するjs
 document.addEventListener("turbolinks:load", function(){
   var sentiment_checkboxes = document.querySelectorAll('.sentiment_checkbox');
     sentiment_checkboxes.forEach(function(element) {
