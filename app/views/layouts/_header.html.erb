@@ -9,14 +9,17 @@
       <!--    <div class="col-3">-->
             <!--ここにロゴが入ります-->
           <%= link_to 'TOP', root_path %>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           </div>
           <div class="col-9">
           <div class="row w-100 justify-content-end">
+
+            <!--ドロップダウンの記述-->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+
               <ul class="navbar-nav ml-auto">
                 <% if customer_signed_in? %>
                   <!--Customer ログイン後header-->
