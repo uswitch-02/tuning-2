@@ -62,13 +62,53 @@
   animation:11s linear infinite rotation1;
 }
 
+  @media screen and (min-width:765px) {
+    .about_center_image_moji {
+    height: 200px;
+    width: 200px;
+    top: 210%;
+    left: 10%;
+    animation:11s linear infinite rotation1;
+  }
+}
+
+  @media screen and (min-width:1025px) {
+    .about_center_image_moji {
+    height: 600px;
+    width: 600px;
+    top: -10%;
+    left: 5%;
+    animation:11s linear infinite rotation1;
+  }
+}
+
+
 .about_center_image_hito {
   // position: absolute; /* 相対位置に指定 */
   height: 400px;
   width: 400px;
-  margin-top: 190px;
-  margin-left: 550px;
+  // margin-top: 190px;
+  // margin-left: 550px;
 }
+
+  @media screen and (min-width:765px) {
+  .about_center_image_hito {
+    height: 100px;
+    width: 100px;
+    top: 260%;
+    left: 110%;
+  }
+}
+
+  @media screen and (min-width:1025px) {
+  .about_center_image_hito {
+  height: 400px;
+  width: 400px;
+    top: 51%;
+    left: 116%;
+  }
+}
+
 
 @keyframes rotation1{
   0%{ transform:rotate(0);}
