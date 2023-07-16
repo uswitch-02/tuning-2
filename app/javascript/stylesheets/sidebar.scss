@@ -1,0 +1,292 @@
+// top・about・favorite以外のページの背景色
+.diary_show_background {
+  background-color: #e0dcdc;
+  width: 100%; /* 横幅いっぱい */
+  height: 1800px; /* 高さ1400px（多めに設定） */
+}
+
+// サイドバーのニューモフィズムのscss
+.user_info_back_base {
+margin-top: 20px;
+width: 350px;
+height: 660px;
+border-radius: 41px;
+background: #e0dcdc;
+box-shadow:  7px 7px 14px #bebbbb,
+             -7px -7px 14px #fffdfd;
+}
+
+.diary_info_back_base {
+margin-top: 30px;
+width: 350px;
+height: 900px;
+border-radius: 41px;
+background: #e0dcdc;
+box-shadow:  7px 7px 14px #bebbbb,
+             -7px -7px 14px #fffdfd;
+}
+
+
+
+// info&formのニューフォフィズム（中身の凹凸）
+
+$ruler: 16px;
+$color-red: #AE1100;
+$color-bg: #EBECF0;
+$color-shadow: #BABECC;
+$color-white: #FFF;
+
+.segment {
+  padding: $ruler;
+  text-align: center;
+}
+
+.sidebar-text {
+  text-align: center;
+  display: block;
+  margin-bottom: 24Px;
+  width: 100%;
+}
+
+.radio-button-wrapper {
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.radio-button-wrapper-is_drafts_draft {
+  text-align: center;
+  display: block;
+  margin-top: -20px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.submit-button-wrapper {
+  text-align: center;
+  display: block;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+
+// お気に入りの投稿のボタン
+.user-info-favorites-button {
+  border-radius: 320px;
+  padding: $ruler;
+  color:#61677C;
+  font-weight: bold;
+  box-shadow: -5px -5px 10px $color-white,  3px 3px 5px $color-shadow;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+  }
+
+  &:active {
+    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+
+  &.unit {
+    border-radius: 8px;
+    line-height: 0;
+    width: 48px;
+    height: 48px;
+    display:inline-flex;
+    justify-content: center;
+    align-items:center;
+    margin: 0 8px;
+    font-size: 48px;
+  }
+
+}
+
+.user_info{
+  border-radius: 320px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 8px;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 85%;
+  padding: $ruler;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+.user_info_introduction {
+  border-radius: 320;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 8px;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 85%;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 325px;
+  height: 100px;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+
+
+.user_info_follw {
+  border-radius: 320px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 8px;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 85%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+.user_info_favorites {
+  border-radius: 320px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 8px;
+
+  width: 85%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+.user_info_profile_btn {
+  ext-align: center;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+// チェックボックスのニューモフィズム
+.checkbox-neumorphism {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 97%;
+  padding: 30px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+
+}
+
+
+
+// タグの箇条書きの点を消す
+ul {
+  list-style-type: none;
+}
+
+// チェックボックスについてのscss
+
+.checkbox-wrapper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  .form-check-label {
+    margin: .15em;
+    width: initial;
+
+    .form-check-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 65px;
+      width: 65px;
+      background-color: #fff;
+      border: 1px solid #aaa;
+      border-radius: 50%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      overflow: hidden;
+      color: #333;
+      font-size: 11px;
+      text-decoration: none;
+      -webkit-transition: .2s;
+      transition: .2s;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: #2196F3;
+        border: 1px solid #2196F3;
+        color: #fff;
+      }
+
+      &.clicked {
+        background-color: #2196F3;
+        border: 1px solid #2196F3;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.user_info_admin{
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 8px;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 85%;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+
+
+.user_info_back_base_admin {
+  margin-top: 20px;
+  width: 350px;
+  height: 680px;
+border-radius: 41px;
+background: #e0dcdc;
+box-shadow:  7px 7px 14px #bebbbb,
+             -7px -7px 14px #fffdfd;
+
+}

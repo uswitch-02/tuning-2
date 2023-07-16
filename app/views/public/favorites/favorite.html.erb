@@ -1,4 +1,13 @@
-いいね一覧
-<% @favorite_diarys.each do |diary|%>
-<%= diary.title %>
-<% end %>
+<div class='container'>
+  <div class='row'>
+        <div class= "border p-3 shadow rounded-pill">
+          <p class="text-muted">
+            <% @favorite_diarys.each do |diary|%>
+              <%= diary.title %>
+            <% end %>
+          </p>
+        </div>
+    </div>
+  </div>
+<!--</div>-->
+<!--</section>-->

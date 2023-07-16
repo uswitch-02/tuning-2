@@ -1,0 +1,101 @@
+.favorite_background_color {
+  background-color: #c0878c;
+  width: 100%; /* 横幅いっぱい */
+  height: 1000px; /* 高さ1400px（多めに設定） */
+}
+// コメント楕円形の設定各種
+.favorite_border {
+  margin-top: 100px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 55% 70% 51% 98% / 52% 63% 62% 58%;
+}
+
+.favorite_border .box {
+  // border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #c0878c;
+  transition: box-shadow 0.5s;
+  border-radius: 55% 70% 51% 98% / 52% 63% 62% 58%;
+  background: linear-gradient(145deg, #cd9096, #ad7a7e);
+  box-shadow:  29px 29px 51px #92676a,
+             -29px -29px 51px #eea7ae;
+}
+
+.favorite_border:hover .box {
+  box-shadow:
+    10px 10px 30px transparent,
+    -10px -10px 30px transparent,
+    inset 10px 10px 30px rgba(18, 47, 61, 0.5),
+    inset -10px -10px 30px rgba(248, 253, 255, 0.9);
+}
+
+// お気に入り投稿テキストの位置等の設定各種
+.favorite_text_title {
+  height: 30px;
+  display: grid;
+  place-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.favorite_text_body {
+  height: 90px;
+  display: grid;
+  place-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// いいねした投稿のタイトルのリンクエフェクトのscss
+a.favorite_text_title_link {
+   	color: #666666;
+   	text-decoration: none;
+   	cursor: pointer;
+  background:
+      radial-gradient(circle 7px, currentColor 90%, transparent) bottom var(--d, -14px)
+      left 50%/12px 14px repeat-x;
+  transition: 0.5s;
+}
+a.favorite_text_title_link:hover {
+  --d: -7px;
+}
+// いいねした投稿内容のリンクエフェクト
+a.favorite_text_body_link {
+   	color: #666666;
+   	text-decoration: none;
+   	cursor: pointer;
+  background:
+      radial-gradient(circle 7px, currentColor 90%, transparent) bottom var(--d, -14px)
+      left 50%/12px 14px repeat-x;
+  transition: 0.5s;
+}
+a.favorite_text_body_link:hover {
+  --d: -7px;
+}
+
+a.favorite_write_user_link {
+  	color: #666666;
+   	cursor: pointer;
+    text-decoration: none;
+    background:
+        radial-gradient(circle 7px, currentColor 90%, transparent) bottom var(--d, -14px)
+        left 50%/12px 14px repeat-x;
+    transition: 0.5s;
+}
+a.favorite_write_user_link:hover {
+  --d: -7px;
+}
+// タイトルエフェクトのscss
+.favorites{
+  font-size: 10vw;
+  background: #c0878c;
+  color: rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+}

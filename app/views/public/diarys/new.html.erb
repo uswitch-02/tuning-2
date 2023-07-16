@@ -1,0 +1,21 @@
+<div class='diary_show_background'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col md-3 text-center'>
+
+      <div class='.user_info_introduction'>
+            <% if @diary.errors.any? %>
+                  <%= @diary.errors.count %>件のエラーが発生しました<br>
+                  <% @diary.errors.full_messages.each do |message| %>
+                  <%= message %><br>
+                <% end %>
+
+            <% end %>
+          <%= link_to "戻る", customer_path(current_customer.id) %><br>
+      </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

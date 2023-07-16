@@ -1,6 +1,15 @@
-<h2>Fllower Users</h2>
-<% if @customer.exists? %>
-  <%= render 'public/customers/index', customers: @customer %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <table>
+      <h1>Fllower Users</h1>
+      <h3><%= @customer_name.pen_name %>さんをフォローしているUsers</h3>
+      <% if @customer.exists? %>
+        <%= render 'public/customers/index', customers: @customer %>
+      <% else %>
+        <p>ユーザーはいません</p>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
