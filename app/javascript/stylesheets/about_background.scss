@@ -1,13 +1,116 @@
-#about-section .about-background {
-  background-image: url("../images/tuning-about-1.png");
+.about-background {
+  // background: url("../images/tuning-about-cliping-main.png") left top / auto 100% no-repeat;
+  // padding-bottom: 50px; /* フッターの高さ分のマージンを追加 */
+  // height: 830px;
+  height: 100vh;
+  width: 100vw;
   background-size: cover;
-  width: 100%;
-  height: 800px;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
+  // background-position: 0% 0%;
+  position: relative; /* 基準位置とする */
+
+  @media screen and (max-width:425px) {
+    /* 画面サイズが425px以下の場合に適用される */
+  background: url("../images/tuning-about425.png") left top / auto 100% no-repeat;
+  width: 100vw;
+  height: 100vh;
+  }
+
+  // @media screen and (min-width:425px) {
+  //   /* 画面サイズが425px以上の場合に適用される */
+  // background: url("../images/tuning-about425.png") left top / auto 100% no-repeat;
+  // width: 100vw;
+  // height: 100vh;
+  // }
+
+  @media screen and (min-width:768px) {
+    /* 画面サイズが768px以上の場合に適用される */
+  background: url("../images/tuning-about768.png") left top / auto 100% no-repeat;
+  width: 100vw;
+  height: 100vh;
+  }
+
+  @media screen and (min-width:1025px) {
+    /* 画面サイズが1025px以上の場合に適用される */
+  background: url("../images/tuning-about-cliping-main.png") left top / auto 100% no-repeat;
+  // padding-bottom: 50px; /* フッターの高さ分のマージンを追加 */
+  width: 100vw;
+  height: 100vh;
+  }
+
+
 }
-body {
-  margin: 0;
-  padding: 0;
+
+.about-box {
+  width: 500px;       /* 適当な幅を指定 */
+  height: 300px;      /* 適当な高さを指定 */
+  position: relative; /* 基準位置とする */
+}
+
+.about-box img {
+  // width: 300px;       /* 適当な幅を指定 */
+  position: absolute; /* 相対位置に指定 */
+}
+
+
+.about_center_image_moji {
+  // position: absolute; /* 相対位置に指定 */
+  // position: relative; /* 基準位置とする */
+  height: 600px;
+  width: 600px;
+  margin-top: 100px;
+  margin-left: 450px;
+  animation:11s linear infinite rotation1;
+}
+
+  @media screen and (min-width:765px) {
+    .about_center_image_moji {
+    height: 200px;
+    width: 200px;
+    top: 210%;
+    left: 10%;
+    animation:11s linear infinite rotation1;
+  }
+}
+
+  @media screen and (min-width:1025px) {
+    .about_center_image_moji {
+    height: 600px;
+    width: 600px;
+    top: -10%;
+    left: 5%;
+    animation:11s linear infinite rotation1;
+  }
+}
+
+
+.about_center_image_hito {
+  // position: absolute; /* 相対位置に指定 */
+  height: 400px;
+  width: 400px;
+  // margin-top: 190px;
+  // margin-left: 550px;
+}
+
+  @media screen and (min-width:765px) {
+  .about_center_image_hito {
+    height: 100px;
+    width: 100px;
+    top: 260%;
+    left: 110%;
+  }
+}
+
+  @media screen and (min-width:1025px) {
+  .about_center_image_hito {
+  height: 400px;
+  width: 400px;
+    top: 51%;
+    left: 116%;
+  }
+}
+
+
+@keyframes rotation1{
+  0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
 }

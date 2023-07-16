@@ -1,7 +1,15 @@
-<body>
-<div id="about-section">
-  <div class="about-background">
-    <%= link_to image_tag("about-signup.png", class: "about_signup_link_image"), new_customer_session_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col md-12 px-0">
+      <div class="about-background">
+        <div class="about_signup_link_image_wrappe">
+          <%= link_to image_tag("about-signup.png", class: "about_signup_link_image"), new_customer_session_path %>
+        </div>
+        <div class="about-box">
+          <%= image_tag "tuning-about-moji.png", class: "about_center_image_moji" %>
+          <%= image_tag "tuning-about-hito.png", class: "about_center_image_hito" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-</body>

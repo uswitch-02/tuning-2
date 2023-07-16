@@ -6,7 +6,9 @@ class Public::DiarysController < ApplicationController
   end
 
   def index
-    @diarys = Diary.all.where(is_draft: :posted)
+    @diarys = Diary.order(created_at: :desc).where(is_draft: :posted)
+    # @diarys = Diary.all.where(is_draft: :posted)
+
     @diary = Diary.new
         if @diary.is_draft? && @diary.customer != current_customer
         end

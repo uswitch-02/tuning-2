@@ -1,38 +1,38 @@
 <%= form_with url: diarys_path, method: :post, local: true do |f| %>
-<%= render 'layouts/error_messages', object: f.object %>
-  <div class="form-group">
+<%= render "layouts/error_messages", object: f.object %>
+  <div class="sidebar-text">
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control diary_title', placeholder: "~50字まで" %>
+    <%= f.text_field :title, class: "form-control diary_title", placeholder: "~50字まで" %>
   </div>
-  <div class="form-group">
+  <div class="sidebar-text">
     <%= f.label :opinion %>
-    <%= f.text_area :body, class: 'form-control diary_body', placeholder: "~200字まで"%>
+    <%= f.text_area :body, class: "form-control diary_body", placeholder: "~100字まで"%>
   </div>
+
+
   <!--投稿に着けるタグの表示-->
-    <div class='form-group'>
-      <div class= "row">
-          <%= f.collection_check_boxes(:sentiment_ids, Sentiment.all, :id, :name) do |sentiment| %>
-              <div class='form-check'>
-                <table class="table">
-                  <%= sentiment.label class: 'form-check-label' do %>
-                      <%= sentiment.check_box class: 'form-check-input' %>
-                      <%= sentiment.text %>
-                  <% end %>
-                </table>
-              </div>
+  <div class="checkbox-neumorphism">
+    <div class="checkbox-wrapper">
+      <%= f.collection_check_boxes(:sentiment_ids, Sentiment.all, :id, :name) do |sentiment| %>
+        <%= sentiment.label class: "form-check-label" do %>
+          <span class="form-check-text"><%= sentiment.text %></span>
+          <%= sentiment.check_box class: "d-none sentiment_checkbox" %>
         <% end %>
-      </div>
+      <% end %>
+    </div>
   </div>
+
+
     <!--投稿の公開・非公開を選択するラジオボタン-->
-  <div class= "form-group">
-    <%= f.radio_button :is_draft, Diary.is_drafts.key(false) %>
-    <%= f.label :is_drafts_posted, Diary.is_drafts_i18n[:posted] %>
-  </div>
-  <div class= "form-group">
-    <%= f.radio_button :is_draft, Diary.is_drafts.key(true) %>
-    <%= f.label :is_drafts_draft, Diary.is_drafts_i18n[:draft] %>
-  </div>
-  <div class="form-group">
-    <%= f.submit class: 'btn btn-success' %>
-  </div>
+<div class="radio-button-wrapper">
+  <%= f.radio_button :is_draft, Diary.is_drafts.key(false), id: "is_drafts_posted" %>
+  <%= f.label :is_drafts_posted, Diary.is_drafts_i18n[:posted], for: "is_drafts_posted" %>
+</div>
+<div class="radio-button-wrapper-is_drafts_draft">
+  <%= f.radio_button :is_draft, Diary.is_drafts.key(true), id: "is_drafts_draft" %>
+  <%= f.label :is_drafts_draft, Diary.is_drafts_i18n[:draft], for: "is_drafts_draft" %>
+</div>
+<div class="submit-button-wrapper">
+  <%= f.submit "投稿", class: "btn btn-success" %>
+</div>
 <% end %>
