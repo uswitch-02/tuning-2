@@ -1,5 +1,6 @@
 
 <table class='table table-hover table-inverse'>
+
   <thead>
     <tr>
       <th></th>
@@ -8,6 +9,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
     <% diarys.each do |diary| %>
       <tr>
@@ -15,13 +17,22 @@
             <%= image_tag diary.customer.get_profile_image, size:'50x50' %>
             <% end %>
         </td>
+
+        <!--diaryタイトルの表示-->
         <td><%= link_to diary.title, diary,  class: "diary_#{diary.id}" %></td>
+
+        <!--diary内容の表示-->
         <td><%= diary.body %></td>
+        <td><%= diary.created_at.strftime('%Y/%m/%d')%></td>
+        <!--いいねボタンの表示-->
         <td id= "favorite_buttons_<%= diary.id %>">
         <%= render "public/favorites/btn", diary: diary %></td>
+
+        <!--コメントの投稿と表示/ただし、本人の投稿にはコメントができないようになっているため、view画面上も表示自体がされない-->
         <td><%= render "public/comments/counter",diary: diary %></td>
 
     <% end %>
       </tr>
   </tbody>
+
 </table>

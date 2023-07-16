@@ -4,7 +4,7 @@
             <%= diary.favorites.count %> いいね
         <% end %>
     <% else %>
-        <%= link_to diary_favorites_path(diary), method: :post, remote: true do %>
+        <%= link_to diary_favorites_path(diary), method: :post, remote: true, data: {"turbolinks" => false} do %>
             <i class="fas fa-heart" aria-hidden="true"></i>
             <%= diary.favorites.count %>いいね
         <% end %>

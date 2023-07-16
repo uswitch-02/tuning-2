@@ -24,7 +24,7 @@ Rails.application.routes.draw do
         patch  'customers/withdraw'          =>  'customers#withdraw'
         get    'customers/information/edit',             to: 'customers#edit', as: 'edit_customer'
         patch  'customers/information',      to: 'customers#update', as: 'update_customer'
-      resources :diarys,       only: %i(index show create edit update destroy) do
+      resources :diarys do
         resources :comments, only: %i(create destroy)
         resource :favorites, only: %i(create destroy)
       end

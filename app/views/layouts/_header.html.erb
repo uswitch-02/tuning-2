@@ -1,20 +1,25 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light", style="background-color: #bc8f8f;">
-  <div class="container-fluid">
-  <!--<nav class="navbar navbar-expand-lg", style="background-color: #bc8f8f;">-->
-    <!--<div class="container">-->
-    <!--<a class="navbar-brand" href="#">Navbar</a>-->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <!--ヘッダーの色の指定-->
+  <nav class="navbar navbar-expand-lg navbar-light", style="
+              background: -webkit-linear-gradient(-101deg, rgb(206, 71, 71), rgb(211, 216, 201));
+              background: linear-gradient(-101deg, rgb(206, 71, 71), rgb(211, 216, 201));">
+
+    <div class="container-fluid">
       <!--<div class="row w-100">-->
       <!--    <div class="col-3">-->
             <!--ここにロゴが入ります-->
-            <%= link_to 'TOP', root_path %>
+          <%= link_to 'TOP', root_path %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
           </div>
           <div class="col-9">
           <div class="row w-100 justify-content-end">
+
+            <!--ドロップダウンの記述-->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+
               <ul class="navbar-nav ml-auto">
                 <% if customer_signed_in? %>
                   <!--Customer ログイン後header-->

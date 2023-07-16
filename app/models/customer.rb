@@ -5,7 +5,6 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum is_deleted: { exist: false, withdraw: true }
-  # enum is_published: { disclose: true, non_disclosure: false }
   enum is_locked: { unlook: false, look: true }
 
   has_many :diarys, dependent: :destroy
@@ -24,10 +23,11 @@ class Customer < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
 
     # バリデーション
+
   with_options presence: true do
     validates :first_name
     validates :last_name
-    validates :pen_name
+    validates :pen_name,length:{maximum:20}
     validates :email, presence: true
     validates :encrypted_password, presence: true,length: { minimum: 6 }
 
@@ -36,6 +36,7 @@ class Customer < ApplicationRecord
       validates :last_name_kana, presence: true
     end
   end
+    validates :introduction,length:{maximum:30}
 
   def self.guest
     guest_email = "guest_#{SecureRandom.hex}@example.com"
