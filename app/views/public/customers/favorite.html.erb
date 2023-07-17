@@ -19,21 +19,21 @@
         <!--いいねした記事-->
       <div class="d-flex col-mx-md-4">
         <!--ニューモニズム-->
-        <% @favorite_diaries.each do |diary|%>
+          <% @favorite_diaries.each do |diary| %>
 
-          <%= link_to diary_path(diary) do%>
+            <%= link_to diary_path(diary) do %>
               <div class="group favorite_border">
                 <div class="box">
                   <div class="favorite_text_title">
                     <div class="favorite_text_title_link">
-                    <%= diary.title %>
+                      <%= truncate(diary.title, length: 7, omission: "…") %>
                     </div>
                   </div>
-                    <div class="favorite_text_body">
-                      <div class="favorite_text_body_link">
-                      <%= diary.body %>
-                      </div>
+                  <div class="favorite_text_body">
+                    <div class="favorite_text_body_link">
+                      <%= truncate(diary.body, length: 7, omission: "…") %>
                     </div>
+                  </div>
                   <div class="favorite_user_name">
                     <div class="favorite_write_user_link">
                       <%= "投稿User：#{diary.customer.pen_name}" %>
@@ -42,6 +42,7 @@
                 </div>
               </div>
             <% end %>
+
           <% end %>
         </div>
       </div>
