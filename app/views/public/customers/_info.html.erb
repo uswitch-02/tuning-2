@@ -29,15 +29,13 @@
   </div>
 
   <div class="row">
-    <!--<div class="user_info_favorites">-->
-    <!--  <div class="user-info-favorites-button">-->
-        <%= link_to favorites_customer_path(customer) do%>
-          <div class="user_info_favorites">
-            <div class="user-info-favorites-button">
-            お気に入り記事
-            </div>
-          </div>
-        <% end %>
+    <%= link_to favorites_customer_path(customer) do%>
+      <div class="user_info_favorites">
+        <div class="user-info-favorites-button">
+        お気に入り記事
+        </div>
+      </div>
+    <% end %>
   </div>
 
     <div class="user_info_follw">
