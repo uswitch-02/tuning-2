@@ -74,6 +74,8 @@ $color-white: #FFF;
 
 // お気に入りの投稿のボタン
 .user-info-favorites-button {
+  width: 210%;
+  text-decoration: none;
   border-radius: 320px;
   padding: $ruler;
   color:#61677C;

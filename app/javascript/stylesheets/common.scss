@@ -5,15 +5,22 @@
 
 // アプリケーション基本フォントの変更のscss
 body {
-width: 100vw;
-font-family: 'Catamaran', sans-serif;
-font-family: 'Lobster', cursive;
-font-family: 'Zen Maru Gothic', sans-serif;
-font-family: 'Zen Old Mincho', serif;
+  text-decoration: none;
+  width: 100vw;
+  font-family: 'Catamaran', sans-serif;
+  font-family: 'Lobster', cursive;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-family: 'Zen Old Mincho', serif;
 }
 
 main {
   width: 100vw;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
 }
 
 // ヘッダー関連のscss

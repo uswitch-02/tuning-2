@@ -36,41 +36,30 @@
     inset -10px -10px 30px rgba(248, 253, 255, 0.9);
 }
 
-.favorite_text_title {
+.favorite_text_title,
+.favorite_text_body,
+.favorite_user_name {
   height: 30px;
-  top: 20%;
+  left: calc(50% - 75px); /* 50% - 自分自身のwidth ÷ 2 で*/
   position: absolute;
   display: block;
-  // top: 40%;
   text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 180px; /* 必要に応じて幅を指定 */
+  width: 150px; /* 必要に応じて幅を指定 */
+}
+
+.favorite_text_title {
+  top: 20%;
 }
 
 .favorite_text_body {
-  height: 30px;
   top: 40%;
-  position: absolute;
-  display: block;
-  text-align: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 180px; /* 必要に応じて幅を指定 */
 }
 
 .favorite_user_name {
-  height: 30px;
   top: 60%;
-  position: absolute;
-  display: block;
-  text-align: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 180px; /* 必要に応じて幅を指定 */
 }
 // いいねした投稿のタイトルのリンクエフェクトのscss
 a.favorite_text_title_link {
