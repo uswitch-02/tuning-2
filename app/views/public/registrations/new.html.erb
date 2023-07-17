@@ -47,14 +47,12 @@
             <td><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %></td>
           </tr>
           <tr>
-            <!--ボタンうまくいってない-->
             <td colspan="2"></td>
             <td><%= f.submit "新規登録", class: "btn btn-block btn-usually font-weight-bold my-3" %></td>
           </tr>
         </table>
       </div>
       <% end %>
-    <%= render "public/shared/links" %>
 <% end %>
 
       <!--ログインリンク-->

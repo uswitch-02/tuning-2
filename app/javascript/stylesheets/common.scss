@@ -17,6 +17,12 @@ main {
 }
 
 // ヘッダー関連のscss
+.top_hedder_logo{
+  height: 30%;
+  width: 30%;
+}
+
+
 input#content {
   background: #fff !important;
   border-style: inset;
@@ -139,6 +145,20 @@ input[id="customer_email"] {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
+
+
+input[id="customer_pen_name"] {
+  height: 2.4em;
+    width: 100%;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc inset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 
 // アバウトページに移動するリンク
 .top_about_link_image{
