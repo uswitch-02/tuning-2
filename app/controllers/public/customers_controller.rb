@@ -86,7 +86,7 @@ before_action :ensure_guest_user, only: [:edit]
   end
 
   def customer_params
-    params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :pen_name, :introduction, :is_published )
+    params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :pen_name, :introduction, :is_published, :profile_image )
   end
 
 end
