@@ -12,6 +12,7 @@ ja:
         email: "メールアドレス"
         password: "パスワード（確認用）"
         encrypted_password: "パスワード"
+        password_confirmation: "パスワード(確認用)"
         first_name: "名"
         last_name: "姓"
         first_name_kana: "メイ"

@@ -1,4 +1,4 @@
-<%= form_with url: diarys_path, method: :post, local: true do |f| %>
+<%= form_with model: Diary.new, url: diarys_path, method: :post, local: true do |f| %>
 <%= render "layouts/error_messages", object: f.object %>
   <div class="sidebar-text">
     <%= f.label :title %>

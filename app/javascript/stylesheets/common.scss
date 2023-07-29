@@ -166,6 +166,13 @@ input[id="customer_pen_name"] {
     -moz-appearance: none;
 }
 
+// userinfo,profile_imageについて
+.profile_image_100{
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+  }
+
 
 // アバウトページに移動するリンク
 .top_about_link_image{
