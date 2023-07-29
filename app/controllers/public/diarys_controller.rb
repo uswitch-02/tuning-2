@@ -58,7 +58,7 @@ class Public::DiarysController < ApplicationController
 private
 
   def diary_params
-    params.permit(:title, :body, :is_draft, sentiment_ids: [])
+    params.require(:diary).permit(:title, :body, :is_draft, sentiment_ids: [])
   end
 
   def article_params
