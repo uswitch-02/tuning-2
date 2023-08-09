@@ -8,7 +8,7 @@ class Sentiment < ApplicationRecord
 
   def validate_tag_count
     max_tags = 3 # 最大タグ数を設定する
-    errors.add(:base, "は#{max_tags}個までしか追加できません") if Tag.count >= max_tags
+    errors.add(:base, "は#{max_tags}個までしか追加できません") if Sentiment.count >= max_tags
   end
 
 end
