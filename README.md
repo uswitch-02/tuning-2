@@ -34,6 +34,8 @@
 - 生理周期前、体調の変化を感じた時
 
 ## 設計書
+- [ER図](https://drive.google.com/file/d/1AgZHvFwUxBfFg1faQc_IRyLFEdXBGyuy/view?usp=sharing)
+
 
 ## 開発環境
 - OS：Linux(CentOS)
